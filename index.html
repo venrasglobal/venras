@@ -1,40 +1,1313 @@
-<!DOCTYPE html>
+import React from "react";
+
+export default function StaticWebsite() {
+  const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VENRAS</title>
-  <meta name="description" content="VENRAS — Trust Us. It’s Done." />
-  <meta property="og:title" content="VENRAS" />
-  <meta property="og:description" content="Trust Us. It’s Done." />
-  <meta property="og:type" content="website" />
-  <style>
-    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#9da7b1; }
-    html, body { height: 100%; }
-    body {
-      margin: 0; display: grid; place-items: center; padding: 24px;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: radial-gradient(1000px 600px at 50% -10%, rgba(79,70,229,0.15), transparent), var(--bg);
-      color: var(--fg);
-    }
-    .card { max-width:720px; width:100%; text-align:center; padding:36px;
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08); border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,.35);
-    }
-    .logo { font-weight:800; letter-spacing:.08em; font-size:clamp(28px,6vw,48px); margin:0 0 8px; }
-    .tagline { font-size:clamp(14px,2.5vw,18px); color:var(--muted); margin:0 0 24px; }
-    .cta { display:inline-block; padding:12px 18px; border-radius:12px; border:1px solid rgba(255,255,255,.12);
-      background: rgba(79,70,229,.15); text-decoration:none; color:var(--fg); font-weight:600; }
-    .footer { margin-top:24px; font-size:12px; color:var(--muted); opacity:.9; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VENRAS - Enterprise IT Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #1f2937;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6, #60a5fa);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+
+        .logo-icon::before {
+            content: 'V';
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            border-radius: 50%;
+        }
+
+        .logo span {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #6b7280;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .mobile-menu {
+            display: none;
+            color: #1f2937;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+            padding: 120px 0 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-text .highlight {
+            color: #2563eb;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1f2937;
+            padding: 12px 24px;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .stat .label {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .hero-visual {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f3f4f6;
+            position: relative;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .service-item {
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .service-item.cloud { background: #dbeafe; }
+        .service-item.security { background: #dcfce7; }
+        .service-item.support { background: #fce7f3; }
+        .service-item.ai { background: #fed7aa; }
+
+        .service-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-item.cloud i { color: #2563eb; }
+        .service-item.security i { color: #16a34a; }
+        .service-item.support i { color: #c026d3; }
+        .service-item.ai i { color: #ea580c; }
+
+        .service-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-item p {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 2px solid #f3f4f6;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border-color: #dbeafe;
+        }
+
+        .service-card .icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            padding: 0.25rem 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .service-features li::before {
+            content: '•';
+            color: #2563eb;
+            margin-right: 0.5rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-text p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .about-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features .check {
+            color: #10b981;
+            font-size: 1.5rem;
+            margin-top: 0.25rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .about-visual {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .values-list {
+            margin-bottom: 2rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .value-icon {
+            width: 40px;
+            height: 40px;
+            background: #dbeafe;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-icon.phone { background: #dbeafe; color: #2563eb; }
+        .contact-icon.email { background: #dcfce7; color: #16a34a; }
+        .contact-icon.location { background: #fce7f3; color: #c026d3; }
+        .contact-icon.time { background: #fed7aa; color: #ea580c; }
+
+        /* Footer */
+        .footer {
+            background: #111827;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: #9ca3af;
+            margin: 1rem 0 2rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #374151;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section ul li a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #60a5fa;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #60a5fa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-text h2 {
+                font-size: 2.5rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Button animations */
+        .btn-primary,
+        .btn-secondary {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before,
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-primary:hover::before,
+        .btn-secondary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
 </head>
 <body>
-  <main class="card">
-    <h1 class="logo">VENRAS</h1>
-    <p class="tagline">Built to Win.</p>
-    <a class="cta" href="mailto:venkat@venras.com">Contact</a>
-    <div class="footer">© <span id="year"></span> VENRAS. All rights reserved.</div>
-  </main>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon"></div>
+                    <span>VENRAS</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="btn-primary">Get Started</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transforming Your <span class="highlight">Digital Future</span></h1>
+                    <p>VENRAS delivers comprehensive IT services designed to accelerate your business growth. From cloud migration to cybersecurity, we provide solutions that scale with your success.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary">Start Your Journey <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn-secondary">Schedule Consultation</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="number">500+</div>
+                            <div class="label">Clients Served</div>
+                        </div>
+                        <div class="stat">
+                            <div class="number">99.9%</div>
+                            <div class="label">Uptime SLA</div>
+                        </div>
+                        <div class="stat">
+                            <div class="number">24/7</div>
+                            <div class="label">Support</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="service-grid">
+                        <div class="service-item cloud">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Cloud Solutions</h3>
+                            <p>Scalable & Secure</p>
+                        </div>
+                        <div class="service-item security">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Cybersecurity</h3>
+                            <p>Enterprise Protection</p>
+                        </div>
+                        <div class="service-item support">
+                            <i class="fas fa-headphones"></i>
+                            <h3>24/7 Support</h3>
+                            <p>Always Available</p>
+                        </div>
+                        <div class="service-item ai">
+                            <i class="fas fa-robot"></i>
+                            <h3>AI Integration</h3>
+                            <p>Future-Ready</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-server"></i>
+                    Our Services
+                </div>
+                <h2 class="section-title">Comprehensive IT Solutions for <span class="highlight">Modern Businesses</span></h2>
+                <p class="section-subtitle">From small startups to enterprise corporations, we deliver tailored technology solutions that drive growth and operational excellence.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="icon cloud">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Migrate, manage, and optimize your cloud infrastructure with AWS, Azure, and Google Cloud expertise.</p>
+                    <ul class="service-features">
+                        <li>Cloud Migration</li>
+                        <li>Infrastructure as Code</li>
+                        <li>Cost Optimization</li>
+                        <li>Multi-Cloud Strategy</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="icon security">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Comprehensive security solutions to protect your business from evolving cyber threats and compliance requirements.</p>
+                    <ul class="service-features">
+                        <li>Threat Detection</li>
+                        <li>Compliance Management</li>
+                        <li>Security Audits</li>
+                        <li>Incident Response</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="icon support">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3>IT Support & Helpdesk</h3>
+                    <p>24/7 technical support ensuring your systems run smoothly and your team stays productive.</p>
+                    <ul class="service-features">
+                        <li>24/7 Monitoring</li>
+                        <li>Remote Support</li>
+                        <li>On-site Service</li>
+                        <li>Preventive Maintenance</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="icon" style="background: #fed7aa; color: #ea580c;">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Infrastructure Management</h3>
+                    <p>Design, implement, and maintain robust IT infrastructure tailored to your business needs.</p>
+                    <ul class="service-features">
+                        <li>Network Design</li>
+                        <li>Server Management</li>
+                        <li>Backup Solutions</li>
+                        <li>Disaster Recovery</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="icon" style="background: #fce7f3; color: #c026d3;">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Development Services</h3>
+                    <p>Custom applications and websites that drive engagement and accelerate your digital transformation.</p>
+                    <ul class="service-features">
+                        <li>Mobile Apps</li>
+                        <li>Web Applications</li>
+                        <li>E-commerce</li>
+                        <li>API Development</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="icon" style="background: #e0e7ff; color: #6366f1;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Analytics & BI</h3>
+                    <p>Transform your data into actionable insights with advanced analytics and business intelligence solutions.</p>
+                    <ul class="service-features">
+                        <li>Data Warehousing</li>
+                        <li>Reporting Dashboards</li>
+                        <li>Predictive Analytics</li>
+                        <li>Data Governance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-badge">
+                        <i class="fas fa-users"></i>
+                        About VENRAS
+                    </div>
+                    <h2>Your Trusted Technology <span class="highlight">Partner Since 2008</span></h2>
+                    <p>VENRAS has been helping businesses harness the power of technology to drive growth, improve efficiency, and stay competitive in an ever-evolving digital landscape.</p>
+                    <ul class="about-features">
+                        <li>
+                            <i class="fas fa-check-circle check"></i>
+                            <div>
+                                <strong>Certified Expertise</strong><br>
+                                Our team holds industry certifications from Microsoft, AWS, Cisco, and other leading technology providers.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle check"></i>
+                            <div>
+                                <strong>Proven Track Record</strong><br>
+                                Successfully delivered over 1,000 projects across various industries, from healthcare to finance.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle check"></i>
+                            <div>
+                                <strong>Scalable Solutions</strong><br>
+                                Our solutions grow with your business, ensuring long-term value and minimal disruption.
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="number">500+</div>
+                            <div class="label">Happy Clients</div>
+                        </div>
+                        <div class="stat">
+                            <div class="number">15+</div>
+                            <div class="label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="number">99.9%</div>
+                            <div class="label">Uptime SLA</div>
+                        </div>
+                        <div class="stat">
+                            <div class="number">24/7</div>
+                            <div class="label">Support</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">Our Core Values</h3>
+                    <div class="values-list">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-target"></i>
+                            </div>
+                            <div>
+                                <strong>Results-Driven</strong><br>
+                                <small style="color: #6b7280;">We focus on delivering measurable business outcomes and ROI for every project.</small>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <strong>Innovation First</strong><br>
+                                <small style="color: #6b7280;">Staying ahead of technology trends to provide cutting-edge solutions for our clients.</small>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div>
+                                <strong>Client Partnership</strong><br>
+                                <small style="color: #6b7280;">Building long-term relationships based on trust, transparency, and mutual success.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #2563eb, #1d4ed8); padding: 1.5rem; border-radius: 12px; color: white; margin-top: 2rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <i class="fas fa-award" style="font-size: 2rem;"></i>
+                            <div>
+                                <strong>Industry Recognition</strong><br>
+                                <small style="opacity: 0.8;">Award-winning IT services</small>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px;">
+                                <strong>Microsoft Partner</strong><br>
+                                <small>Gold Certified</small>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px;">
+                                <strong>AWS Partner</strong><br>
+                                <small>Advanced Tier</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-envelope"></i>
+                    Get In Touch
+                </div>
+                <h2 class="section-title">Ready to Transform Your <span class="highlight">Business?</span></h2>
+                <p class="section-subtitle">Schedule a free consultation with our IT experts and discover how VENRAS can help accelerate your digital transformation journey.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">Send us a message</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service Interest</label>
+                                <select id="service" name="service">
+                                    <option value="">Select a service</option>
+                                    <option value="cloud">Cloud Solutions</option>
+                                    <option value="security">Cybersecurity</option>
+                                    <option value="support">IT Support</option>
+                                    <option value="infrastructure">Infrastructure</option>
+                                    <option value="development">Development</option>
+                                    <option value="analytics">Data Analytics</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project requirements, timeline, and goals..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; font-size: 1rem;">
+                            Send Message <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 2rem; font-size: 1.2rem; font-weight: bold;">Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon phone">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <strong>Phone</strong><br>
+                            <span style="color: #6b7280;">+1 (555) 123-4567</span><br>
+                            <small style="color: #9ca3af;">Mon-Fri 8AM-8PM EST</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon email">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email</strong><br>
+                            <span style="color: #6b7280;">hello@venras.com</span><br>
+                            <small style="color: #9ca3af;">Response within 24hrs</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon location">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <strong>Office</strong><br>
+                            <span style="color: #6b7280;">123 Tech Boulevard<br>Innovation District<br>San Francisco, CA 94107</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon time">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <strong>Business Hours</strong><br>
+                            <span style="color: #6b7280;">Mon-Fri: 8:00 AM - 8:00 PM<br>Sat-Sun: 9:00 AM - 5:00 PM</span><br>
+                            <strong style="color: #10b981;">24/7 Emergency Support</strong>
+                        </div>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #2563eb, #1d4ed8); padding: 1.5rem; border-radius: 12px; color: white; margin-top: 2rem;">
+                        <h4 style="margin-bottom: 1rem;">Schedule a Free Consultation</h4>
+                        <p style="margin-bottom: 1rem; opacity: 0.9; font-size: 0.9rem;">Get expert advice tailored to your business needs. No commitment required.</p>
+                        <a href="#" class="btn-secondary" style="background: white; color: #2563eb; display: block; text-align: center; border: none;">Book Consultation Call</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon"></div>
+                        <span>VENRAS</span>
+                    </div>
+                    <p>Empowering businesses with cutting-edge IT solutions since 2008. Your trusted partner for digital transformation and technology excellence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Cloud Solutions</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">IT Support</a></li>
+                        <li><a href="#">Infrastructure</a></li>
+                        <li><a href="#">Development</a></li>
+                        <li><a href="#">Data Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Certifications</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div style="color: #9ca3af; line-height: 1.8;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-phone" style="color: #60a5fa;"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <i class="fas fa-envelope" style="color: #60a5fa;"></i>
+                            <span>hello@venras.com</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-map-marker-alt" style="color: #60a5fa; margin-top: 0.25rem;"></i>
+                            <span>123 Tech Boulevard<br>Innovation District<br>San Francisco, CA 94107</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 VENRAS. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+            submitButton.disabled = true;
+            
+            setTimeout(() => {
+                alert('Thank you for your message! We will get back to you within 24 hours.');
+                this.reset();
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            }, 2000);
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
-</html>
+</html>`;
+
+  return (
+    <div className="min-h-screen bg-gray-50 p-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            VENRAS Static Website Code
+          </h1>
+          <p className="text-gray-600 mb-6">
+            Complete HTML file ready to copy and paste. This is a fully functional, responsive website 
+            that you can host on any web server or hosting platform.
+          </p>
+          
+          <div className="bg-gray-100 rounded-lg p-4 mb-6">
+            <h2 className="text-lg font-semibold mb-2">Features Included:</h2>
+            <ul className="grid grid-cols-2 gap-2 text-sm text-gray-700">
+              <li>✅ Responsive Design</li>
+              <li>✅ VENRAS Branding & Logo</li>
+              <li>✅ Professional Services Section</li>
+              <li>✅ Contact Form</li>
+              <li>✅ Smooth Animations</li>
+              <li>✅ Mobile-Friendly</li>
+              <li>✅ Font Awesome Icons</li>
+              <li>✅ Modern CSS Styling</li>
+            </ul>
+          </div>
+
+          <div className="bg-blue-50 rounded-lg p-4 mb-6">
+            <h2 className="text-lg font-semibold text-blue-900 mb-2">How to Use:</h2>
+            <ol className="text-sm text-blue-800 space-y-1">
+              <li>1. Copy the HTML code from the text area below</li>
+              <li>2. Save it as "index.html" on your computer</li>
+              <li>3. Upload to your web hosting service or open locally in a browser</li>
+              <li>4. Customize the content, contact details, and styling as needed</li>
+            </ol>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-semibold">Complete Website Code</h2>
+            <button
+              onClick={() => navigator.clipboard.writeText(htmlContent)}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+            >
+              Copy to Clipboard
+            </button>
+          </div>
+          <textarea
+            value={htmlContent}
+            readOnly
+            className="w-full h-96 p-4 border border-gray-300 rounded-lg font-mono text-sm bg-gray-50 resize-none"
+            placeholder="HTML code will appear here..."
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
