@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>VENRAS | Enterprise IT Consulting & Engineering</title>
+<title>VENRAS | Enterprise Consulting & Engineering</title>
 
 <meta name="description" content="VENRAS delivers enterprise consulting, architecture, engineering, and technology staffing solutions.">
 <meta name="theme-color" content="#2563eb">
@@ -52,6 +52,7 @@ header{
   padding:14px 0;
 }
 
+/* BRAND */
 .brand{
   display:flex;
   align-items:center;
@@ -67,6 +68,7 @@ header{
   place-items:center;
 }
 
+/* NAV LINKS */
 .nav a{
   text-decoration:none;
   color:var(--muted);
@@ -76,7 +78,8 @@ header{
 
 .nav a:hover{color:var(--text)}
 
-.nav-cta{
+/* 🔥 SINGLE CTA STYLE (used everywhere) */
+.cta{
   background:#111827;
   color:#fff;
   padding:10px 14px;
@@ -117,11 +120,11 @@ h1{
 
 .actions{
   margin-top:26px;
-  display:flex;
-  gap:12px;
 }
 
+/* BUTTON SYSTEM CONSISTENCY */
 .btn{
+  display:inline-block;
   background:var(--primary);
   color:#fff;
   padding:10px 14px;
@@ -212,7 +215,6 @@ footer{
 
     <div class="brand">
 
-      <!-- LOGO -->
       <div class="logo">
         <svg width="46" height="46" viewBox="0 0 40 40">
           <defs>
@@ -240,10 +242,8 @@ footer{
     <nav>
       <a href="#services">Services</a>
       <a href="#capabilities">Capabilities</a>
-      <a href="#contact">Contact</a>
+      <a class="cta" href="#contact">Contact</a>
     </nav>
-
-    <a class="nav-cta" href="#contact">Contact</a>
 
   </div>
 </header>
@@ -259,8 +259,8 @@ footer{
       </h1>
 
       <p>
-        VENRAS supports organisations with consulting, system architecture,
-        engineering delivery, and technology staffing across modern enterprise environments.
+        VENRAS delivers consulting, system architecture, engineering execution,
+        and specialised delivery capabilities across modern enterprise environments.
       </p>
 
       <div class="actions">
@@ -287,22 +287,22 @@ footer{
 
       <div class="card">
         <h3>IT Consulting</h3>
-        <p>Technology strategy and advisory for enterprise environments.</p>
+        <p>Enterprise strategy and advisory.</p>
       </div>
 
       <div class="card">
         <h3>System Architecture</h3>
-        <p>Design of scalable, resilient enterprise systems.</p>
+        <p>Design of scalable enterprise systems.</p>
       </div>
 
       <div class="card">
         <h3>Engineering Delivery</h3>
-        <p>Build and execution of modern platform capabilities.</p>
+        <p>Build and execution of platform capabilities.</p>
       </div>
 
       <div class="card">
         <h3>Talent Augmentation</h3>
-        <p>Specialist engineers embedded into delivery teams.</p>
+        <p>Embedded engineers and specialist teams.</p>
       </div>
 
     </div>
@@ -316,14 +316,14 @@ footer{
 
     <div class="title">
       <h2>Capabilities</h2>
-      <p>Depth across enterprise systems and platforms</p>
+      <p>Depth across enterprise systems and engineering practices</p>
     </div>
 
     <div class="grid">
 
       <div class="card">
         <h3>Enterprise Architecture</h3>
-        <p>End-to-end system structure and governance.</p>
+        <p>System structure and governance alignment.</p>
       </div>
 
       <div class="card">
@@ -333,22 +333,22 @@ footer{
 
       <div class="card">
         <h3>Systems Integration</h3>
-        <p>API and event-driven integration across ecosystems.</p>
+        <p>API and event-driven integration layers.</p>
       </div>
 
       <div class="card">
-        <h3>Automation & Reliability</h3>
-        <p>Delivery pipelines and operational resilience.</p>
+        <h3>Reliability Engineering</h3>
+        <p>SRE practices, observability, and production stability.</p>
       </div>
 
       <div class="card">
-        <h3>Data Systems</h3>
-        <p>Design of scalable data platforms and flows.</p>
+        <h3>Performance Engineering</h3>
+        <p>System optimisation, scalability, and load resilience.</p>
       </div>
 
       <div class="card">
-        <h3>Engineering Enablement</h3>
-        <p>Tools, workflows, and team productivity systems.</p>
+        <h3>Automation & Delivery</h3>
+        <p>CI/CD pipelines and engineering efficiency systems.</p>
       </div>
 
     </div>
