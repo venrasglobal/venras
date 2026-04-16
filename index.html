@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>VENRAS | IT Consulting & Digital Engineering</title>
+<title>VENRAS | IT Consulting & Engineering Support</title>
 
-<meta name="description" content="VENRAS provides IT consulting, cloud solutions, digital transformation, and engineering support for modern businesses." />
+<meta name="description" content="VENRAS provides practical IT consulting, cloud solutions, system modernisation, and engineering support for growing businesses." />
 <meta name="theme-color" content="#0b1220" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,43 +16,49 @@
 <style>
 :root{
   --bg:#0b1220;
-  --panel:rgba(255,255,255,0.04);
-  --panel2:rgba(255,255,255,0.06);
   --text:#e5e7eb;
   --muted:#94a3b8;
-  --border:rgba(255,255,255,0.08);
 
   --primary:#2563eb;
   --accent:#7c3aed;
 
+  --border:rgba(255,255,255,0.06);
+  --soft:rgba(255,255,255,0.02);
+
   --radius:14px;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
 body{
-  font-family:Inter, system-ui;
-  background:
-    radial-gradient(900px 500px at 80% 0%, rgba(124,58,237,0.18), transparent),
-    radial-gradient(800px 500px at 10% 10%, rgba(37,99,235,0.16), transparent),
-    var(--bg);
+  font-family:Inter, system-ui, sans-serif;
   color:var(--text);
+
+  /* CLEAN CALM BACKGROUND (FIXED) */
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(600px 300px at 20% 0%, rgba(37,99,235,0.10), transparent 60%),
+    radial-gradient(500px 250px at 80% 10%, rgba(124,58,237,0.07), transparent 55%);
   line-height:1.6;
 }
 
-/* layout */
+/* CONTAINER */
 .container{
-  max-width:1100px;
+  max-width:1080px;
   margin:auto;
   padding:0 20px;
 }
 
-/* header */
+/* HEADER */
 header{
   position:sticky;
   top:0;
-  background:rgba(11,18,32,0.75);
-  backdrop-filter:blur(12px);
+  background:rgba(11,18,32,0.7);
+  backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
   z-index:50;
 }
@@ -68,38 +74,40 @@ header{
   display:flex;
   align-items:center;
   gap:10px;
-  font-weight:700;
+  font-weight:600;
 }
 
-/* logo */
+/* LOGO */
 .logo{
-  width:36px;
-  height:36px;
+  width:34px;
+  height:34px;
 }
 
-/* nav */
+/* NAV */
 .nav-links{
   display:flex;
-  gap:20px;
+  gap:18px;
 }
 
 .nav-links a{
+  font-size:14px;
   color:var(--muted);
   text-decoration:none;
-  font-size:14px;
 }
 
-.nav-links a:hover{color:var(--text)}
+.nav-links a:hover{
+  color:var(--text);
+}
 
-/* buttons */
+/* BUTTON */
 .btn{
   background:linear-gradient(135deg,var(--primary),var(--accent));
-  color:white;
+  color:#fff;
   padding:10px 14px;
   border-radius:12px;
   text-decoration:none;
-  font-weight:600;
   font-size:14px;
+  font-weight:600;
 }
 
 .btn.secondary{
@@ -107,7 +115,7 @@ header{
   border:1px solid var(--border);
 }
 
-/* hero */
+/* HERO */
 .hero{
   padding:90px 0 60px;
 }
@@ -119,10 +127,18 @@ header{
   align-items:center;
 }
 
+.label{
+  font-size:12px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:12px;
+}
+
 h1{
-  font-size:44px;
-  line-height:1.1;
-  letter-spacing:-0.5px;
+  font-size:42px;
+  line-height:1.05;
+  letter-spacing:-0.8px;
 }
 
 .highlight{
@@ -134,10 +150,11 @@ h1{
 .hero p{
   margin-top:16px;
   color:var(--muted);
-  font-size:17px;
+  font-size:16px;
   max-width:520px;
 }
 
+/* ACTIONS */
 .actions{
   margin-top:22px;
   display:flex;
@@ -145,23 +162,20 @@ h1{
   flex-wrap:wrap;
 }
 
-/* side cards */
-.cards{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
+/* SIMPLE LIST (replaces noisy cards) */
+.simple-list{
+  margin-top:10px;
+  border-left:1px solid var(--border);
+  padding-left:16px;
 }
 
-.card{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:16px;
-  font-size:14px;
+.simple-list div{
+  padding:10px 0;
   color:var(--muted);
+  font-size:14px;
 }
 
-/* sections */
+/* SECTIONS */
 section{
   padding:80px 0;
 }
@@ -172,7 +186,8 @@ section{
 }
 
 .section-title h2{
-  font-size:32px;
+  font-size:30px;
+  letter-spacing:-0.3px;
 }
 
 .section-title p{
@@ -180,53 +195,58 @@ section{
   margin-top:8px;
 }
 
-/* grid */
+/* GRID (SUBTLE NOW) */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:16px;
+  gap:14px;
 }
 
+/* SURFACES (FLAT PREMIUM STYLE) */
 .box{
-  background:var(--panel);
+  background:var(--soft);
   border:1px solid var(--border);
   border-radius:var(--radius);
-  padding:22px;
+  padding:20px;
   transition:0.25s ease;
 }
 
 .box:hover{
-  transform:translateY(-4px);
-  background:var(--panel2);
+  transform:translateY(-3px);
+  border-color:rgba(255,255,255,0.12);
 }
 
 .box h3{
-  font-size:16px;
+  font-size:15px;
   margin-bottom:6px;
+}
+
+.box p{
+  color:var(--muted);
+  font-size:14px;
 }
 
 /* ABOUT */
 .about{
   text-align:center;
-  max-width:750px;
+  max-width:760px;
   margin:auto;
   color:var(--muted);
+  font-size:15px;
 }
 
 /* CONTACT */
-.contact{
-  text-align:center;
-}
-
 .contact-box{
   max-width:520px;
   margin:auto;
   padding:28px;
   border:1px solid var(--border);
-  background:var(--panel);
+  background:var(--soft);
   border-radius:var(--radius);
+  text-align:center;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:30px;
@@ -234,7 +254,7 @@ footer{
   border-top:1px solid var(--border);
 }
 
-/* mobile */
+/* MOBILE */
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr}
   h1{font-size:34px}
@@ -250,14 +270,12 @@ footer{
 
 <div class="brand">
 
-<!-- SIMPLE CLEAN LOGO (NON-FAKE, SYMBOLIC) -->
 <div class="logo">
-<svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+<svg width="34" height="34" viewBox="0 0 40 40" fill="none">
 <path d="M12 12 L20 28 L28 12" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
 <circle cx="12" cy="12" r="2.5" fill="#2563eb"/>
 <circle cx="20" cy="28" r="2.5" fill="#7c3aed"/>
 <circle cx="28" cy="12" r="2.5" fill="#2563eb"/>
-
 <defs>
 <linearGradient id="g" x1="0" y1="0" x2="40" y2="40">
 <stop stop-color="#2563eb"/>
@@ -288,26 +306,36 @@ VENRAS
 <div class="container hero-grid">
 
 <div>
+
+<div class="label">IT CONSULTING & ENGINEERING SUPPORT</div>
+
 <h1>
-Practical <span class="highlight">IT consulting</span> & engineering support for growing teams
+Practical <span class="highlight">technology consulting</span> for modern systems
 </h1>
 
 <p>
-VENRAS helps organizations design, build, and improve cloud systems, digital platforms,
-and engineering workflows. Focused on clarity, reliability, and long-term scalability.
+We help teams design, improve, and support cloud and software systems with a focus on clarity, reliability, and maintainability.
 </p>
 
 <div class="actions">
 <a class="btn" href="#contact">Contact Us</a>
 <a class="btn secondary" href="#services">View Services</a>
 </div>
+
+<div class="simple-list">
+<div>Cloud & Infrastructure Support</div>
+<div>System Modernisation Guidance</div>
+<div>Engineering Team Augmentation</div>
+<div>Technical Architecture Advisory</div>
 </div>
 
-<div class="cards">
-<div class="card">Cloud & Infrastructure</div>
-<div class="card">IT Staffing Support</div>
-<div class="card">System Modernisation</div>
-<div class="card">Platform Engineering</div>
+</div>
+
+<div class="simple-list">
+<div>✔ Practical delivery focus</div>
+<div>✔ Clear technical communication</div>
+<div>✔ Scalable architecture thinking</div>
+<div>✔ Long-term system reliability</div>
 </div>
 
 </div>
@@ -319,29 +347,29 @@ and engineering workflows. Focused on clarity, reliability, and long-term scalab
 
 <div class="section-title">
 <h2>Services</h2>
-<p>Focused capabilities across modern IT delivery</p>
+<p>Focused and practical engineering capabilities</p>
 </div>
 
 <div class="grid">
 
 <div class="box">
 <h3>IT Consulting</h3>
-<p>Architecture guidance and technical advisory for enterprise systems.</p>
+<p>Architecture guidance and system-level technical advisory.</p>
 </div>
 
 <div class="box">
 <h3>Cloud Solutions</h3>
-<p>Migration, optimisation, and infrastructure design for cloud platforms.</p>
+<p>Design and support for scalable cloud infrastructure.</p>
 </div>
 
 <div class="box">
-<h3>Resource Augmentation</h3>
-<p>Providing skilled engineers to support project delivery teams.</p>
+<h3>System Modernisation</h3>
+<p>Improving and refactoring legacy platforms.</p>
 </div>
 
 <div class="box">
-<h3>Digital Transformation</h3>
-<p>Modernising legacy systems and improving digital workflows.</p>
+<h3>Engineering Support</h3>
+<p>Providing experienced engineers to assist delivery teams.</p>
 </div>
 
 </div>
@@ -358,9 +386,9 @@ and engineering workflows. Focused on clarity, reliability, and long-term scalab
 </div>
 
 <div class="about">
-VENRAS is a technology consulting firm focused on helping businesses improve
-their systems and engineering capabilities. We prioritize practical delivery,
-clear communication, and scalable technical design.
+VENRAS is a technology consulting company focused on helping organizations improve
+their systems, engineering processes, and cloud architecture. We emphasize practical
+delivery and long-term maintainability over complexity.
 </div>
 
 </div>
@@ -372,15 +400,15 @@ clear communication, and scalable technical design.
 
 <div class="section-title">
 <h2>Contact</h2>
-<p>Let’s discuss your requirements</p>
+<p>We respond within 24 hours</p>
 </div>
 
 <div class="contact-box">
 
 <h3>Start a conversation</h3>
 
-<p style="color:var(--muted);margin-top:10px;">
-We respond to all inquiries within 24 hours.
+<p style="margin-top:10px;color:var(--muted);font-size:14px;">
+Tell us what you’re building or improving.
 </p>
 
 <div style="margin-top:18px;display:flex;flex-direction:column;gap:10px;">
