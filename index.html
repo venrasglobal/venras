@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>VENRAS | Enterprise IT Consulting, Cloud & Staffing Solutions</title>
+<title>VENRAS | Enterprise Architecture, Engineering & Cloud Consulting</title>
 
-<meta name="description" content="VENRAS provides enterprise IT consulting, cloud solutions, digital transformation, and technology staffing services.">
+<meta name="description" content="VENRAS provides enterprise architecture, engineering, cloud consulting, digital transformation, and staffing services.">
 <meta name="theme-color" content="#2563eb">
 
 <style>
@@ -33,7 +33,6 @@ body{
   line-height:1.6;
 }
 
-/* LAYOUT */
 .container{
   max-width:1140px;
   margin:auto;
@@ -57,7 +56,6 @@ header{
   padding:14px 0;
 }
 
-/* 🔥 IMPROVED LOGO HIERARCHY */
 .brand{
   display:flex;
   align-items:center;
@@ -65,7 +63,6 @@ header{
   font-weight:800;
 }
 
-/* bigger, more premium logo */
 .logo-wrap{
   width:44px;
   height:44px;
@@ -73,10 +70,9 @@ header{
   place-items:center;
 }
 
-/* NAV */
 .nav-links{
   display:flex;
-  gap:20px;
+  gap:18px;
 }
 
 .nav-links a{
@@ -121,7 +117,7 @@ h1{
   margin-top:18px;
   font-size:18px;
   color:var(--muted);
-  max-width:540px;
+  max-width:560px;
 }
 
 .hero-actions{
@@ -140,7 +136,7 @@ h1{
     radial-gradient(circle at 75% 75%, rgba(96,165,250,.18), transparent 55%);
 }
 
-/* SECTION */
+/* SECTIONS */
 section{
   padding:90px 0;
 }
@@ -167,7 +163,6 @@ section{
   gap:18px;
 }
 
-/* CARD */
 .card{
   border:1px solid var(--border);
   border-radius:var(--radius);
@@ -189,9 +184,17 @@ section{
   font-size:14px;
 }
 
-/* SUB SECTION BACKGROUND */
-.soft{
-  background:var(--soft);
+/* SPECIAL SECTION */
+.soft{background:var(--soft)}
+
+/* ARCHITECTURE HEADER STYLE */
+.kicker{
+  color:var(--primary);
+  font-weight:700;
+  font-size:13px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:6px;
 }
 
 /* FOOTER */
@@ -219,7 +222,7 @@ footer{
 
     <div class="brand">
 
-      <!-- 🔥 IMPROVED LOGO (bigger + clearer) -->
+      <!-- LOGO -->
       <div class="logo-wrap">
         <svg width="44" height="44" viewBox="0 0 40 40">
           <defs>
@@ -246,9 +249,9 @@ footer{
 
     <nav class="nav-links">
       <a href="#services">Services</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#engineering">Engineering</a>
       <a href="#engagement">Engagement</a>
-      <a href="#capabilities">Capabilities</a>
-      <a href="#industries">Industries</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -263,13 +266,13 @@ footer{
 
     <div>
       <h1>
-        Enterprise IT Consulting,<br>
-        Cloud & <span class="highlight">Staffing Solutions</span>
+        Enterprise Architecture,<br>
+        Engineering & <span class="highlight">Cloud Consulting</span>
       </h1>
 
       <p>
-        VENRAS supports enterprises with IT consulting, cloud architecture,
-        digital transformation, and technology staffing across modern delivery environments.
+        VENRAS delivers enterprise IT consulting, cloud architecture, platform engineering,
+        digital transformation, and staffing solutions across modern technology environments.
       </p>
 
       <div class="hero-actions">
@@ -283,30 +286,30 @@ footer{
   </div>
 </section>
 
-<!-- SERVICES (CORE OFFERINGS) -->
+<!-- SERVICES (HIGH LEVEL) -->
 <section id="services">
   <div class="container">
 
     <div class="section-title">
       <h2>Core Services</h2>
-      <p>Primary consulting and delivery offerings</p>
+      <p>Enterprise consulting and delivery offerings</p>
     </div>
 
     <div class="grid">
 
       <div class="card">
         <h3>IT Consulting</h3>
-        <p>Enterprise architecture, advisory, and technology strategy.</p>
+        <p>Technology strategy, advisory, and enterprise planning.</p>
       </div>
 
       <div class="card">
         <h3>Cloud Solutions</h3>
-        <p>Migration, optimisation, and cloud-native infrastructure design.</p>
+        <p>Cloud migration, optimisation, and modern infrastructure.</p>
       </div>
 
       <div class="card">
         <h3>Digital Transformation</h3>
-        <p>Modernisation of legacy systems and enterprise platforms.</p>
+        <p>Modernisation of legacy enterprise systems.</p>
       </div>
 
       <div class="card">
@@ -315,17 +318,80 @@ footer{
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE LAYER (NEW) -->
+<section id="architecture" class="soft">
+  <div class="container">
+
+    <div class="section-title">
+      <div class="kicker">Enterprise Layer</div>
+      <h2>Architecture</h2>
+      <p>Designing scalable and resilient enterprise systems</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Enterprise Architecture</h3>
+        <p>End-to-end system structure, governance, and alignment.</p>
+      </div>
+
+      <div class="card">
+        <h3>Solution Architecture</h3>
+        <p>Application-level design across platforms and integrations.</p>
+      </div>
+
+      <div class="card">
+        <h3>Cloud Architecture</h3>
+        <p>Scalable, secure, and cost-optimised cloud design.</p>
+      </div>
+
+    </div>
 
   </div>
 </section>
 
-<!-- ENGAGEMENT MODELS (IMPORTANT UPGRADE) -->
+<!-- ENGINEERING LAYER (NEW) -->
+<section id="engineering">
+  <div class="container">
+
+    <div class="section-title">
+      <div class="kicker">Delivery Layer</div>
+      <h2>Engineering</h2>
+      <p>Building and operating modern platforms and systems</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Platform Engineering</h3>
+        <p>Internal developer platforms and scalable infrastructure.</p>
+      </div>
+
+      <div class="card">
+        <h3>DevOps & Automation</h3>
+        <p>CI/CD pipelines, infrastructure automation, and reliability.</p>
+      </div>
+
+      <div class="card">
+        <h3>System Integration</h3>
+        <p>API-driven integration across enterprise ecosystems.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ENGAGEMENT -->
 <section id="engagement" class="soft">
   <div class="container">
 
     <div class="section-title">
       <h2>Engagement Models</h2>
-      <p>How we deliver value to enterprise teams</p>
+      <p>How we partner with enterprise teams</p>
     </div>
 
     <div class="grid">
@@ -336,86 +402,22 @@ footer{
       </div>
 
       <div class="card">
-        <h3>Project Delivery</h3>
-        <p>End-to-end delivery of defined initiatives.</p>
+        <h3>Delivery Teams</h3>
+        <p>End-to-end execution of defined initiatives.</p>
       </div>
 
       <div class="card">
-        <h3>Team Augmentation</h3>
-        <p>Skilled engineers integrated into client teams.</p>
+        <h3>Augmentation</h3>
+        <p>Embedded engineers and specialists within client teams.</p>
       </div>
 
     </div>
-
-  </div>
-</section>
-
-<!-- CAPABILITIES -->
-<section id="capabilities">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Capabilities</h2>
-      <p>Technical depth across enterprise systems</p>
-    </div>
-
-    <div class="grid">
-
-      <div class="card"><h3>Cloud Architecture</h3></div>
-      <div class="card"><h3>Platform Engineering</h3></div>
-      <div class="card"><h3>System Integration</h3></div>
-      <div class="card"><h3>API Development</h3></div>
-      <div class="card"><h3>Data Platforms</h3></div>
-      <div class="card"><h3>DevOps Enablement</h3></div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- INDUSTRIES -->
-<section id="industries" class="soft">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Industries</h2>
-      <p>Where we typically operate</p>
-    </div>
-
-    <div class="grid">
-
-      <div class="card"><h3>Financial Services</h3></div>
-      <div class="card"><h3>Healthcare</h3></div>
-      <div class="card"><h3>Retail & E-commerce</h3></div>
-      <div class="card"><h3>Technology</h3></div>
-      <div class="card"><h3>Government</h3></div>
-      <div class="card"><h3>Telecommunications</h3></div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section>
-  <div class="container">
-
-    <div class="section-title">
-      <h2>About VENRAS</h2>
-      <p>Enterprise-focused consulting and delivery partner</p>
-    </div>
-
-    <p style="max-width:820px;margin:auto;text-align:center;color:#6b7280;font-size:16px;">
-      VENRAS is a technology consulting firm delivering IT consulting, cloud solutions,
-      digital transformation, and staffing services. We help organisations improve
-      scalability, modernise systems, and strengthen delivery capability.
-    </p>
 
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="soft">
+<section id="contact">
   <div class="container">
 
     <div class="section-title">
@@ -429,7 +431,9 @@ footer{
 
       <div style="margin-top:18px;display:flex;flex-direction:column;gap:12px;">
         <a class="btn" href="mailto:info@venras.com">Email Us</a>
-        <a class="btn" style="background:#111827" href="mailto:info@venras.com?subject=Consultation">Request Consultation</a>
+        <a class="btn" style="background:#111827" href="mailto:info@venras.com?subject=Consultation">
+          Request Consultation
+        </a>
       </div>
 
     </div>
