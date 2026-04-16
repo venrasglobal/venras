@@ -4,46 +4,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>VENRAS | IT Consulting & Cloud Transformation</title>
-<meta name="description" content="VENRAS provides IT consulting, cloud transformation, platform engineering, and enterprise delivery services for modern organisations.">
-<meta name="theme-color" content="#2563eb">
-<link rel="canonical" href="https://venras.com">
+<title>VENRAS | Cloud & Enterprise Transformation Consulting</title>
 
-<!-- Open Graph -->
-<meta property="og:title" content="VENRAS | IT Consulting">
-<meta property="og:description" content="Cloud transformation and enterprise technology consulting.">
-<meta property="og:type" content="website">
+<meta name="description" content="VENRAS helps enterprises modernise legacy systems into scalable cloud-native platforms through architecture, delivery, and engineering execution.">
+<meta name="theme-color" content="#1d4ed8">
 
-<!-- Font Awesome (deferred loading improvement) -->
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+<meta property="og:title" content="VENRAS | Cloud & Transformation Consulting">
+<meta property="og:description" content="Modern enterprise consulting focused on cloud transformation and platform engineering.">
+<meta property="og:type" content="website">
+
 <style>
-:root {
-  --primary:#2563eb;
-  --text:#1f2937;
-  --muted:#6b7280;
-  --bg:#ffffff;
-  --soft:#f9fafb;
+:root{
+  --primary:#1d4ed8;
+  --accent:#0ea5e9;
+  --bg:#f8fafc;
+  --surface:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
+html{scroll-behavior:smooth;}
+
 body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color:var(--text);
   background:var(--bg);
+  color:var(--text);
   line-height:1.6;
 }
 
-/* NAV */
+/* HEADER */
 header{
   position:fixed;
   top:0;
   width:100%;
   background:rgba(255,255,255,0.92);
   backdrop-filter:blur(10px);
-  border-bottom:1px solid #eee;
+  border-bottom:1px solid #e5e7eb;
   z-index:1000;
 }
 
@@ -64,30 +65,32 @@ header{
   display:flex;
   align-items:center;
   gap:10px;
-  font-weight:700;
+  font-weight:800;
   font-size:20px;
+  text-decoration:none;
+  color:var(--text);
 }
 
 .logo-box{
   width:34px;height:34px;
   border-radius:8px;
-  background:linear-gradient(135deg,var(--primary),#60a5fa);
+  background:linear-gradient(135deg,var(--primary),var(--accent));
   display:grid;
   place-items:center;
   color:white;
-  font-weight:700;
-}
-
-.nav a{
-  text-decoration:none;
-  color:var(--muted);
-  font-weight:500;
+  font-weight:800;
 }
 
 .nav-links{
   display:flex;
-  gap:20px;
+  gap:18px;
   align-items:center;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:500;
 }
 
 .btn{
@@ -95,10 +98,9 @@ header{
   color:white;
   padding:10px 16px;
   border-radius:8px;
-  border:none;
-  cursor:pointer;
   text-decoration:none;
   display:inline-block;
+  font-weight:600;
 }
 
 /* HERO */
@@ -106,7 +108,7 @@ main{margin-top:70px;}
 
 .hero{
   padding:110px 0 80px;
-  background:linear-gradient(135deg,#f9fafb,#fff);
+  background:linear-gradient(135deg,#f8fafc,#ffffff);
 }
 
 .hero-grid{
@@ -118,7 +120,7 @@ main{margin-top:70px;}
 
 h1{
   font-size:44px;
-  line-height:1.1;
+  line-height:1.15;
 }
 
 .highlight{color:var(--primary);}
@@ -127,8 +129,25 @@ h1{
   margin:16px 0;
   color:var(--muted);
   font-size:18px;
+  max-width:520px;
 }
 
+.hero-actions{
+  display:flex;
+  gap:12px;
+  margin-top:18px;
+}
+
+.btn-secondary{
+  background:#e2e8f0;
+  color:var(--text);
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* HERO CARDS */
 .hero-cards{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -136,7 +155,7 @@ h1{
 }
 
 .card{
-  background:#fff;
+  background:var(--surface);
   padding:18px;
   border-radius:12px;
   box-shadow:0 8px 20px rgba(0,0,0,0.06);
@@ -171,8 +190,8 @@ section{
 }
 
 .box{
-  background:#fff;
-  border:1px solid #eee;
+  background:var(--surface);
+  border:1px solid #e5e7eb;
   padding:26px;
   border-radius:14px;
   transition:transform .2s ease, box-shadow .2s ease;
@@ -192,7 +211,7 @@ section{
 /* CONTACT */
 .contact{
   text-align:center;
-  background:var(--soft);
+  background:var(--bg);
 }
 
 .email-box{
@@ -206,32 +225,41 @@ section{
 
 /* FOOTER */
 footer{
-  background:#111827;
+  background:#0f172a;
   color:white;
   text-align:center;
   padding:30px;
+}
+
+footer nav a{
+  color:#cbd5e1;
+  margin:0 10px;
+  text-decoration:none;
+  font-size:14px;
 }
 
 /* MOBILE */
 @media (max-width:768px){
   .hero-grid{grid-template-columns:1fr;}
   h1{font-size:34px;}
+  .hero-actions{flex-direction:column;}
 }
 </style>
 </head>
 
-<body>
+<body id="top">
 
 <header>
-<div class="container nav" role="navigation" aria-label="Main navigation">
+<div class="container nav">
 
-<div class="logo">
+<a href="#top" class="logo" aria-label="VENRAS Home">
 <div class="logo-box">V</div>
 VENRAS
-</div>
+</a>
 
-<nav class="nav-links">
+<nav class="nav-links" aria-label="Primary navigation">
 <a href="#services">Services</a>
+<a href="#approach">Approach</a>
 <a href="#about">About</a>
 <a class="btn" href="#contact">Contact</a>
 </nav>
@@ -241,67 +269,143 @@ VENRAS
 
 <main>
 
+<!-- HERO -->
 <section class="hero">
 <div class="container hero-grid">
 
 <div>
-<h1>Modern <span class="highlight">IT Consulting</span> for Scalable Businesses</h1>
-<p>Cloud transformation, platform engineering, and enterprise delivery for modern organisations.</p>
+<h1>We modernise <span class="highlight">enterprise systems</span> for cloud-scale performance.</h1>
+
+<p>
+VENRAS helps organisations transform legacy platforms into scalable, cloud-native architectures through execution-focused consulting.
+</p>
+
+<div class="hero-actions">
 <a class="btn" href="#contact">Start a Conversation</a>
+<a class="btn-secondary" href="#services">View Services</a>
+</div>
 </div>
 
 <div class="hero-cards">
 <div class="card"><i class="fas fa-cloud"></i><p>Cloud</p></div>
 <div class="card"><i class="fas fa-shield-alt"></i><p>Security</p></div>
 <div class="card"><i class="fas fa-cogs"></i><p>Platforms</p></div>
-<div class="card"><i class="fas fa-chart-line"></i><p>Transformation</p></div>
+<div class="card"><i class="fas fa-chart-line"></i><p>Scale</p></div>
 </div>
 
 </div>
 </section>
 
+<!-- SERVICES -->
 <section id="services">
 <div class="container">
 
 <div class="section-title">
 <h2>Services</h2>
-<p>Enterprise technology capabilities</p>
+<p>Outcome-driven capabilities for enterprise transformation</p>
 </div>
 
 <div class="grid">
-<div class="box"><i class="fas fa-cloud"></i><h3>Cloud</h3><p>Migration & architecture</p></div>
-<div class="box"><i class="fas fa-project-diagram"></i><h3>Delivery</h3><p>Program execution</p></div>
-<div class="box"><i class="fas fa-plug"></i><h3>Integration</h3><p>API-first systems</p></div>
-<div class="box"><i class="fas fa-server"></i><h3>Platforms</h3><p>Engineering at scale</p></div>
-<div class="box"><i class="fas fa-lock"></i><h3>Security</h3><p>Cloud security design</p></div>
-<div class="box"><i class="fas fa-database"></i><h3>Data</h3><p>Analytics platforms</p></div>
+
+<div class="box">
+<i class="fas fa-cloud"></i>
+<h3>Cloud Modernisation</h3>
+<p>Transform legacy systems into scalable cloud-native architectures.</p>
+</div>
+
+<div class="box">
+<i class="fas fa-project-diagram"></i>
+<h3>Delivery Execution</h3>
+<p>Lead complex transformation programs from design to rollout.</p>
+</div>
+
+<div class="box">
+<i class="fas fa-plug"></i>
+<h3>Integration Architecture</h3>
+<p>API-first and event-driven system design for enterprise scale.</p>
+</div>
+
+<div class="box">
+<i class="fas fa-server"></i>
+<h3>Platform Engineering</h3>
+<p>Build internal platforms that accelerate developer productivity.</p>
+</div>
+
+<div class="box">
+<i class="fas fa-lock"></i>
+<h3>Security Architecture</h3>
+<p>Embed security into cloud and platform foundations.</p>
+</div>
+
+<div class="box">
+<i class="fas fa-database"></i>
+<h3>Data Platforms</h3>
+<p>Design analytics ecosystems for operational decision-making.</p>
+</div>
+
 </div>
 
 </div>
 </section>
 
+<!-- APPROACH -->
+<section id="approach" style="background:#f1f5f9;">
+<div class="container">
+
+<div class="section-title">
+<h2>Approach</h2>
+<p>How we engage with clients</p>
+</div>
+
+<div class="grid">
+
+<div class="box">
+<h3>Plan</h3>
+<p>Define architecture, strategy, and delivery roadmap.</p>
+</div>
+
+<div class="box">
+<h3>Build</h3>
+<p>Execute transformation with embedded engineering teams.</p>
+</div>
+
+<div class="box">
+<h3>Scale</h3>
+<p>Optimise systems for long-term performance and resilience.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
 <section id="about">
 <div class="container section-title">
+
 <h2>About VENRAS</h2>
-<p>Outcome-driven technology consulting</p>
-<p style="max-width:700px;margin:auto;margin-top:20px;color:#6b7280;">
-We help organisations modernise systems, accelerate delivery, and adopt scalable cloud architectures.
+<p>Execution-focused consulting for enterprise transformation</p>
+
+<p style="max-width:720px;margin:20px auto 0;color:var(--muted);">
+We partner with enterprises to modernise core systems, improve delivery capability, and enable scalable cloud adoption. Our focus is practical execution, not advisory-only engagement.
 </p>
+
 </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="contact">
 <div class="container">
 
 <div class="section-title">
 <h2>Contact</h2>
-<p>Response within 24 hours</p>
+<p>We respond within 24 hours</p>
 </div>
 
 <div class="email-box">
 <h3>info@venras.com</h3>
-<p style="color:#6b7280;margin-top:10px;">
-Cloud consulting, architecture, and transformation advisory.
+<p style="color:var(--muted);margin-top:10px;">
+For cloud transformation, platform engineering, or advisory engagements.
 </p>
 </div>
 
@@ -311,7 +415,16 @@ Cloud consulting, architecture, and transformation advisory.
 </main>
 
 <footer>
-© 2026 VENRAS. All rights reserved.
+
+<nav aria-label="Footer navigation">
+<a href="#services">Services</a>
+<a href="#approach">Approach</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<p style="margin-top:12px;">© 2026 VENRAS. All rights reserved.</p>
+
 </footer>
 
 </body>
