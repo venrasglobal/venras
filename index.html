@@ -6,7 +6,7 @@
 
 <title>VENRAS | Enterprise IT Consulting & Engineering</title>
 
-<meta name="description" content="VENRAS delivers enterprise IT consulting, cloud architecture, engineering, and staffing solutions.">
+<meta name="description" content="VENRAS delivers enterprise consulting, architecture, engineering, and technology staffing solutions.">
 <meta name="theme-color" content="#2563eb">
 
 <style>
@@ -59,7 +59,7 @@ header{
   font-weight:800;
 }
 
-/* LOGO BIGGER + CLEANER */
+/* LOGO */
 .logo{
   width:46px;
   height:46px;
@@ -74,20 +74,22 @@ header{
   font-weight:500;
 }
 
-.btn{
-  background:var(--primary);
+.nav a:hover{color:var(--text)}
+
+.nav-cta{
+  background:#111827;
   color:#fff;
   padding:10px 14px;
   border-radius:10px;
   text-decoration:none;
   font-weight:600;
+  margin-left:18px;
 }
 
 /* HERO */
 .hero{
   padding:130px 0 100px;
   background:linear-gradient(180deg,#f9fafb,#fff);
-  text-align:left;
 }
 
 .hero-grid{
@@ -119,7 +121,18 @@ h1{
   gap:12px;
 }
 
-/* HERO VISUAL (cleaner) */
+.btn{
+  background:var(--primary);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.btn-dark{background:#111827}
+
+/* VISUAL */
 .visual{
   height:320px;
   border-radius:18px;
@@ -129,7 +142,7 @@ h1{
     radial-gradient(circle at 70% 70%, rgba(96,165,250,.15), transparent 60%);
 }
 
-/* SECTION */
+/* SECTIONS */
 section{
   padding:100px 0;
 }
@@ -149,14 +162,14 @@ section{
   margin-top:8px;
 }
 
-/* SIMPLE GRID */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:20px;
 }
 
-/* MINIMAL CARD (more premium) */
+/* CARD */
 .card{
   padding:22px;
   border:1px solid var(--border);
@@ -172,32 +185,6 @@ section{
 .card p{
   font-size:14px;
   color:var(--muted);
-}
-
-/* SINGLE CONSOLIDATED CAPABILITY BLOCK */
-.capability{
-  background:var(--soft);
-}
-
-/* CONTACT */
-.contact-box{
-  max-width:520px;
-  margin:auto;
-  padding:28px;
-  border:1px solid var(--border);
-  border-radius:16px;
-  text-align:center;
-}
-
-.contact-box h3{
-  margin-bottom:10px;
-}
-
-.contact-actions{
-  margin-top:16px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
 }
 
 /* FOOTER */
@@ -256,7 +243,7 @@ footer{
       <a href="#contact">Contact</a>
     </nav>
 
-    <a class="btn" href="#contact">Contact</a>
+    <a class="nav-cta" href="#contact">Contact</a>
 
   </div>
 </header>
@@ -267,18 +254,18 @@ footer{
 
     <div>
       <h1>
-        Enterprise IT Consulting<br>
+        Enterprise Consulting,<br>
         <span class="highlight">Architecture & Engineering</span>
       </h1>
 
       <p>
-        VENRAS delivers enterprise consulting, cloud architecture, engineering,
-        and staffing solutions for modern technology environments.
+        VENRAS supports organisations with consulting, system architecture,
+        engineering delivery, and technology staffing across modern enterprise environments.
       </p>
 
       <div class="actions">
         <a class="btn" href="#contact">Contact</a>
-        <a class="btn" style="background:#111827" href="#services">Explore</a>
+        <a class="btn btn-dark" href="#services">Explore</a>
       </div>
     </div>
 
@@ -287,7 +274,7 @@ footer{
   </div>
 </section>
 
-<!-- SERVICES (SIMPLIFIED CORE) -->
+<!-- SERVICES -->
 <section id="services">
   <div class="container">
 
@@ -300,67 +287,68 @@ footer{
 
       <div class="card">
         <h3>IT Consulting</h3>
-        <p>Enterprise advisory and technology strategy.</p>
+        <p>Technology strategy and advisory for enterprise environments.</p>
       </div>
 
       <div class="card">
-        <h3>Cloud Solutions</h3>
-        <p>Migration, optimisation, and cloud architecture.</p>
+        <h3>System Architecture</h3>
+        <p>Design of scalable, resilient enterprise systems.</p>
       </div>
 
       <div class="card">
-        <h3>Digital Transformation</h3>
-        <p>Modernisation of legacy enterprise systems.</p>
+        <h3>Engineering Delivery</h3>
+        <p>Build and execution of modern platform capabilities.</p>
       </div>
 
       <div class="card">
-        <h3>Staffing & Teams</h3>
-        <p>Engineering talent and embedded delivery teams.</p>
+        <h3>Talent Augmentation</h3>
+        <p>Specialist engineers embedded into delivery teams.</p>
       </div>
 
     </div>
+
   </div>
 </section>
 
-<!-- CAPABILITIES (ARCHITECTURE + ENGINEERING MERGED) -->
-<section id="capabilities" class="capability">
+<!-- CAPABILITIES -->
+<section id="capabilities" style="background:#f9fafb;">
   <div class="container">
 
     <div class="title">
-      <h2>Architecture & Engineering</h2>
-      <p>Designing and delivering scalable enterprise systems</p>
+      <h2>Capabilities</h2>
+      <p>Depth across enterprise systems and platforms</p>
     </div>
 
     <div class="grid">
 
       <div class="card">
         <h3>Enterprise Architecture</h3>
-        <p>System structure, governance, and alignment.</p>
-      </div>
-
-      <div class="card">
-        <h3>Cloud Architecture</h3>
-        <p>Scalable, secure cloud platform design.</p>
+        <p>End-to-end system structure and governance.</p>
       </div>
 
       <div class="card">
         <h3>Platform Engineering</h3>
-        <p>Internal platforms and developer enablement.</p>
+        <p>Internal platforms and developer enablement systems.</p>
       </div>
 
       <div class="card">
-        <h3>DevOps & Automation</h3>
-        <p>CI/CD, infrastructure automation, reliability.</p>
+        <h3>Systems Integration</h3>
+        <p>API and event-driven integration across ecosystems.</p>
       </div>
 
       <div class="card">
-        <h3>System Integration</h3>
-        <p>API-driven enterprise integration.</p>
+        <h3>Automation & Reliability</h3>
+        <p>Delivery pipelines and operational resilience.</p>
       </div>
 
       <div class="card">
-        <h3>Data Platforms</h3>
-        <p>Scalable data and analytics systems.</p>
+        <h3>Data Systems</h3>
+        <p>Design of scalable data platforms and flows.</p>
+      </div>
+
+      <div class="card">
+        <h3>Engineering Enablement</h3>
+        <p>Tools, workflows, and team productivity systems.</p>
       </div>
 
     </div>
@@ -377,13 +365,13 @@ footer{
       <p>We respond within 24 hours</p>
     </div>
 
-    <div class="contact-box">
+    <div class="card" style="max-width:520px;margin:auto;text-align:center;">
 
       <h3>Start a conversation</h3>
 
-      <div class="contact-actions">
+      <div style="margin-top:16px;display:flex;flex-direction:column;gap:12px;">
         <a class="btn" href="mailto:info@venras.com">Email Us</a>
-        <a class="btn" style="background:#111827" href="mailto:info@venras.com?subject=Consultation">
+        <a class="btn btn-dark" href="mailto:info@venras.com?subject=Consultation">
           Request Consultation
         </a>
       </div>
