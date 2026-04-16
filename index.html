@@ -2,399 +2,317 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VENRAS | IT Consulting & Cloud Transformation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<title>VENRAS | IT Consulting & Cloud Transformation</title>
+<meta name="description" content="VENRAS provides IT consulting, cloud transformation, platform engineering, and enterprise delivery services for modern organisations.">
+<meta name="theme-color" content="#2563eb">
+<link rel="canonical" href="https://venras.com">
+
+<!-- Open Graph -->
+<meta property="og:title" content="VENRAS | IT Consulting">
+<meta property="og:description" content="Cloud transformation and enterprise technology consulting.">
+<meta property="og:type" content="website">
+
+<!-- Font Awesome (deferred loading improvement) -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-* {margin:0;padding:0;box-sizing:border-box;}
+:root {
+  --primary:#2563eb;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --soft:#f9fafb;
+}
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
-    color: #1f2937;
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
 }
 
 /* NAV */
-.navbar {
-    position: fixed;
-    width: 100%;
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #eee;
-    padding: 15px 0;
-    z-index: 1000;
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #eee;
+  z-index:1000;
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px;
 }
 
-.nav-content {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
 }
 
-.logo {
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-weight:bold;
-    font-size:22px;
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+  font-size:20px;
 }
 
-.logo-box {
-    width:36px;
-    height:36px;
-    border-radius:8px;
-    background: linear-gradient(135deg,#2563eb,#60a5fa);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-    font-weight:bold;
+.logo-box{
+  width:34px;height:34px;
+  border-radius:8px;
+  background:linear-gradient(135deg,var(--primary),#60a5fa);
+  display:grid;
+  place-items:center;
+  color:white;
+  font-weight:700;
 }
 
-.nav-links {
-    display:flex;
-    gap:25px;
+.nav a{
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:500;
 }
 
-.nav-links a {
-    text-decoration:none;
-    color:#6b7280;
+.nav-links{
+  display:flex;
+  gap:20px;
+  align-items:center;
 }
 
-.btn {
-    background:#2563eb;
-    color:white;
-    padding:10px 18px;
-    border-radius:6px;
-    text-decoration:none;
-    border:none;
-    cursor:pointer;
+.btn{
+  background:var(--primary);
+  color:white;
+  padding:10px 16px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
 }
 
 /* HERO */
-.hero {
-    padding:140px 0 100px;
-    background: linear-gradient(135deg,#f9fafb,#ffffff);
+main{margin-top:70px;}
+
+.hero{
+  padding:110px 0 80px;
+  background:linear-gradient(135deg,#f9fafb,#fff);
 }
 
-.hero-grid {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
 }
 
-.hero h1 {
-    font-size:48px;
-    line-height:1.1;
+h1{
+  font-size:44px;
+  line-height:1.1;
 }
 
-.highlight {color:#2563eb;}
+.highlight{color:var(--primary);}
 
-.hero p {
-    margin:20px 0;
-    color:#6b7280;
-    font-size:18px;
+.hero p{
+  margin:16px 0;
+  color:var(--muted);
+  font-size:18px;
 }
 
-.hero-cards {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
+.hero-cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
 }
 
-.mini-card {
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    text-align:center;
-}
-
-.mini-card i {
-    font-size:24px;
-    margin-bottom:10px;
-    color:#2563eb;
+.card{
+  background:#fff;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  text-align:center;
 }
 
 /* SECTIONS */
-.section {
-    padding:100px 0;
+section{
+  padding:90px 0;
+  content-visibility:auto;
+  contain-intrinsic-size:800px;
 }
 
-.section-header {
-    text-align:center;
-    margin-bottom:60px;
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
 }
 
-.section-header h2 {
-    font-size:36px;
+.section-title h2{
+  font-size:34px;
 }
 
-.section-header p {
-    color:#6b7280;
+.section-title p{
+  color:var(--muted);
 }
 
-/* SERVICES */
-.services-grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
 }
 
-.service-card {
-    background:white;
-    padding:30px;
-    border-radius:16px;
-    border:1px solid #eee;
-    transition:0.3s;
+.box{
+  background:#fff;
+  border:1px solid #eee;
+  padding:26px;
+  border-radius:14px;
+  transition:transform .2s ease, box-shadow .2s ease;
 }
 
-.service-card:hover {
-    transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(0,0,0,0.1);
+.box:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(0,0,0,0.1);
 }
 
-.service-card i {
-    font-size:28px;
-    color:#2563eb;
-    margin-bottom:15px;
-}
-
-/* HOW WE WORK */
-.light-bg {
-    background:#f9fafb;
+.box i{
+  font-size:26px;
+  color:var(--primary);
+  margin-bottom:10px;
 }
 
 /* CONTACT */
-.contact-box {
-    background:white;
-    padding:30px;
-    border-radius:16px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.08);
-    max-width:600px;
-    margin:auto;
+.contact{
+  text-align:center;
+  background:var(--soft);
 }
 
-input, textarea {
-    width:100%;
-    padding:12px;
-    margin-bottom:10px;
-    border:1px solid #ddd;
-    border-radius:6px;
+.email-box{
+  max-width:520px;
+  margin:auto;
+  background:white;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 /* FOOTER */
-.footer {
-    background:#111827;
-    color:white;
-    text-align:center;
-    padding:40px 0;
-    margin-top:50px;
+footer{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:30px;
 }
 
 /* MOBILE */
-@media(max-width:768px){
-.hero-grid {grid-template-columns:1fr;}
+@media (max-width:768px){
+  .hero-grid{grid-template-columns:1fr;}
+  h1{font-size:34px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="navbar">
-<div class="container nav-content">
+<header>
+<div class="container nav" role="navigation" aria-label="Main navigation">
 
 <div class="logo">
 <div class="logo-box">V</div>
 VENRAS
 </div>
 
-<div class="nav-links">
+<nav class="nav-links">
 <a href="#services">Services</a>
 <a href="#about">About</a>
-<a href="#contact" class="btn">Contact</a>
-</div>
+<a class="btn" href="#contact">Contact</a>
+</nav>
 
 </div>
-</div>
+</header>
 
-<!-- HERO -->
+<main>
+
 <section class="hero">
 <div class="container hero-grid">
 
 <div>
 <h1>Modern <span class="highlight">IT Consulting</span> for Scalable Businesses</h1>
-<p>
-We deliver cloud, platform, and transformation solutions that help organisations modernise and grow with confidence.
-</p>
-
-<a href="#contact" class="btn">Start a Conversation</a>
+<p>Cloud transformation, platform engineering, and enterprise delivery for modern organisations.</p>
+<a class="btn" href="#contact">Start a Conversation</a>
 </div>
 
 <div class="hero-cards">
-<div class="mini-card">
-<i class="fas fa-cloud"></i>
-<p>Cloud Solutions</p>
-</div>
-<div class="mini-card">
-<i class="fas fa-shield-alt"></i>
-<p>Security</p>
-</div>
-<div class="mini-card">
-<i class="fas fa-cogs"></i>
-<p>Platforms</p>
-</div>
-<div class="mini-card">
-<i class="fas fa-chart-line"></i>
-<p>Transformation</p>
-</div>
+<div class="card"><i class="fas fa-cloud"></i><p>Cloud</p></div>
+<div class="card"><i class="fas fa-shield-alt"></i><p>Security</p></div>
+<div class="card"><i class="fas fa-cogs"></i><p>Platforms</p></div>
+<div class="card"><i class="fas fa-chart-line"></i><p>Transformation</p></div>
 </div>
 
 </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="section">
+<section id="services">
 <div class="container">
 
-<div class="section-header">
-<h2>Our Services</h2>
-<p>Practical solutions for modern enterprise technology challenges</p>
+<div class="section-title">
+<h2>Services</h2>
+<p>Enterprise technology capabilities</p>
 </div>
 
-<div class="services-grid">
-
-<div class="service-card">
-<i class="fas fa-cloud"></i>
-<h3>Cloud Transformation</h3>
-<p>Migration, optimisation, and cloud-native architecture design.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-project-diagram"></i>
-<h3>Program Delivery</h3>
-<p>Execution of complex transformation initiatives.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-plug"></i>
-<h3>Integration & APIs</h3>
-<p>API-first and event-driven enterprise architecture.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-server"></i>
-<h3>Platform Engineering</h3>
-<p>Scalable infrastructure and modern application platforms.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-lock"></i>
-<h3>Cybersecurity</h3>
-<p>Security practices aligned to modern cloud environments.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-database"></i>
-<h3>Data & Analytics</h3>
-<p>Data platforms and insights for informed decisions.</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- HOW WE WORK -->
-<section class="section light-bg">
-<div class="container">
-
-<div class="section-header">
-<h2>How We Work</h2>
-<p>Flexible engagement models</p>
-</div>
-
-<div class="services-grid">
-
-<div class="service-card">
-<h3>Advisory</h3>
-<p>Strategy, architecture, and roadmap definition.</p>
-</div>
-
-<div class="service-card">
-<h3>Delivery</h3>
-<p>End-to-end execution and program leadership.</p>
-</div>
-
-<div class="service-card">
-<h3>Augmentation</h3>
-<p>Embedded support within your teams.</p>
-</div>
-
+<div class="grid">
+<div class="box"><i class="fas fa-cloud"></i><h3>Cloud</h3><p>Migration & architecture</p></div>
+<div class="box"><i class="fas fa-project-diagram"></i><h3>Delivery</h3><p>Program execution</p></div>
+<div class="box"><i class="fas fa-plug"></i><h3>Integration</h3><p>API-first systems</p></div>
+<div class="box"><i class="fas fa-server"></i><h3>Platforms</h3><p>Engineering at scale</p></div>
+<div class="box"><i class="fas fa-lock"></i><h3>Security</h3><p>Cloud security design</p></div>
+<div class="box"><i class="fas fa-database"></i><h3>Data</h3><p>Analytics platforms</p></div>
 </div>
 
 </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-<div class="container">
-
-<div class="section-header">
+<section id="about">
+<div class="container section-title">
 <h2>About VENRAS</h2>
-<p>A modern IT consulting firm focused on practical delivery and outcomes</p>
-</div>
-
-<p style="max-width:700px;margin:auto;text-align:center;color:#6b7280;">
-We partner with organisations to solve complex technology challenges across cloud, platforms, and transformation programs. Our approach combines deep technical expertise with practical execution to deliver measurable outcomes.
+<p>Outcome-driven technology consulting</p>
+<p style="max-width:700px;margin:auto;margin-top:20px;color:#6b7280;">
+We help organisations modernise systems, accelerate delivery, and adopt scalable cloud architectures.
 </p>
-
 </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section" style="background:#f9fafb;">
+<section id="contact" class="contact">
 <div class="container">
 
-<div class="section-header">
-<h2>Start a Conversation</h2>
-<p>We typically respond within 24 hours</p>
+<div class="section-title">
+<h2>Contact</h2>
+<p>Response within 24 hours</p>
 </div>
 
-<div style="text-align:center; padding:40px; background:white; border-radius:16px; max-width:600px; margin:auto; box-shadow:0 20px 40px rgba(0,0,0,0.08);">
-
-<h3 style="margin-bottom:10px;">Contact Email</h3>
-
-<p style="font-size:18px; color:#2563eb; font-weight:600;">
-info@venras.com
+<div class="email-box">
+<h3>info@venras.com</h3>
+<p style="color:#6b7280;margin-top:10px;">
+Cloud consulting, architecture, and transformation advisory.
 </p>
-
-<p style="color:#6b7280; margin-top:10px;">
-Send us an email for cloud consulting, program delivery, or transformation advisory.
-</p>
-
 </div>
-
-<br>
-
-<p style="text-align:center;">Sydney, Australia</p>
 
 </div>
 </section>
 
-<!-- FOOTER -->
-<div class="footer">
-<p>© 2026 VENRAS. All rights reserved.</p>
-</div>
+</main>
 
+<footer>
+© 2026 VENRAS. All rights reserved.
+</footer>
 
 </body>
 </html>
