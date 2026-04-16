@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>VENRAS | Enterprise Consulting & Engineering</title>
+<title>VENRAS | Enterprise Consulting, Architecture & Delivery</title>
 
-<meta name="description" content="VENRAS delivers enterprise consulting, architecture, engineering, and technology staffing solutions.">
+<meta name="description" content="VENRAS provides enterprise consulting, architecture, engineering, program management, and technology delivery services.">
 <meta name="theme-color" content="#2563eb">
 
 <style>
@@ -52,12 +52,14 @@ header{
   padding:14px 0;
 }
 
-/* BRAND */
-.brand{
+/* BRAND (CLICKABLE LOGO) */
+.brand a{
   display:flex;
   align-items:center;
   gap:14px;
   font-weight:800;
+  text-decoration:none;
+  color:var(--text);
 }
 
 /* LOGO */
@@ -68,17 +70,16 @@ header{
   place-items:center;
 }
 
-/* NAV LINKS */
-.nav a{
+/* NAV */
+nav a{
   text-decoration:none;
   color:var(--muted);
   margin-left:18px;
   font-weight:500;
 }
 
-.nav a:hover{color:var(--text)}
+nav a:hover{color:var(--text)}
 
-/* 🔥 SINGLE CTA STYLE (used everywhere) */
 .cta{
   background:#111827;
   color:#fff;
@@ -122,7 +123,6 @@ h1{
   margin-top:26px;
 }
 
-/* BUTTON SYSTEM CONSISTENCY */
 .btn{
   display:inline-block;
   background:var(--primary);
@@ -145,7 +145,7 @@ h1{
     radial-gradient(circle at 70% 70%, rgba(96,165,250,.15), transparent 60%);
 }
 
-/* SECTIONS */
+/* SECTION */
 section{
   padding:100px 0;
 }
@@ -203,7 +203,7 @@ footer{
 @media(max-width:768px){
   .hero-grid{grid-template-columns:1fr}
   h1{font-size:38px}
-  .nav a{display:none}
+  nav a{display:none}
 }
 </style>
 </head>
@@ -213,54 +213,57 @@ footer{
 <header>
   <div class="container nav">
 
+    <!-- CLICKABLE LOGO -->
     <div class="brand">
+      <a href="#top">
 
-      <div class="logo">
-        <svg width="46" height="46" viewBox="0 0 40 40">
-          <defs>
-            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#2563eb"/>
-              <stop offset="100%" stop-color="#60a5fa"/>
-            </linearGradient>
-          </defs>
+        <div class="logo">
+          <svg width="46" height="46" viewBox="0 0 40 40">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#2563eb"/>
+                <stop offset="100%" stop-color="#60a5fa"/>
+              </linearGradient>
+            </defs>
 
-          <path d="M10 10 L20 32 L30 10"
-                stroke="url(#g)"
-                stroke-width="3.4"
-                stroke-linecap="round"
-                fill="none"/>
+            <path d="M10 10 L20 32 L30 10"
+                  stroke="url(#g)"
+                  stroke-width="3.4"
+                  stroke-linecap="round"
+                  fill="none"/>
 
-          <circle cx="10" cy="10" r="2.3" fill="#2563eb"/>
-          <circle cx="20" cy="32" r="2.3" fill="#2563eb"/>
-          <circle cx="30" cy="10" r="2.3" fill="#2563eb"/>
-        </svg>
-      </div>
+            <circle cx="10" cy="10" r="2.3" fill="#2563eb"/>
+            <circle cx="20" cy="32" r="2.3" fill="#2563eb"/>
+            <circle cx="30" cy="10" r="2.3" fill="#2563eb"/>
+          </svg>
+        </div>
 
-      VENRAS
+        VENRAS
+      </a>
     </div>
 
     <nav>
       <a href="#services">Services</a>
       <a href="#capabilities">Capabilities</a>
-      <a href="#contact">Contact</a>
+      <a class="cta" href="#contact">Contact</a>
     </nav>
 
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section id="top" class="hero">
   <div class="container hero-grid">
 
     <div>
       <h1>
         Enterprise Consulting,<br>
-        <span class="highlight">Architecture & Engineering</span>
+        <span class="highlight">Architecture & Delivery</span>
       </h1>
 
       <p>
-        VENRAS delivers consulting, system architecture, engineering execution,
-        and specialised delivery capabilities across modern enterprise environments.
+        VENRAS partners with organisations on advisory, architecture design,
+        engineering delivery, and program execution across complex environments.
       </p>
 
       <div class="actions">
@@ -274,35 +277,35 @@ footer{
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES (ADVISORY LAYER) -->
 <section id="services">
   <div class="container">
 
     <div class="title">
-      <h2>Services</h2>
-      <p>Core enterprise offerings</p>
+      <h2>Advisory</h2>
+      <p>Strategy, planning, and execution direction</p>
     </div>
 
     <div class="grid">
 
       <div class="card">
         <h3>IT Consulting</h3>
-        <p>Enterprise strategy and advisory.</p>
+        <p>Technology strategy and enterprise advisory.</p>
       </div>
 
       <div class="card">
-        <h3>System Architecture</h3>
-        <p>Design of scalable enterprise systems.</p>
+        <h3>Program Strategy</h3>
+        <p>Planning and structuring complex initiatives.</p>
       </div>
 
       <div class="card">
-        <h3>Engineering Delivery</h3>
-        <p>Build and execution of platform capabilities.</p>
+        <h3>Delivery Governance</h3>
+        <p>Controls, operating models, and execution frameworks.</p>
       </div>
 
       <div class="card">
-        <h3>Talent Augmentation</h3>
-        <p>Embedded engineers and specialist teams.</p>
+        <h3>Talent Strategy</h3>
+        <p>Team structuring and capability planning.</p>
       </div>
 
     </div>
@@ -310,45 +313,45 @@ footer{
   </div>
 </section>
 
-<!-- CAPABILITIES -->
+<!-- CAPABILITIES (BUILD + RUN) -->
 <section id="capabilities" style="background:#f9fafb;">
   <div class="container">
 
     <div class="title">
-      <h2>Capabilities</h2>
-      <p>Depth across enterprise systems and engineering practices</p>
+      <h2>Architecture, Engineering & Delivery</h2>
+      <p>Designing, building, and operating enterprise systems</p>
     </div>
 
     <div class="grid">
 
       <div class="card">
-        <h3>Enterprise Architecture</h3>
-        <p>System structure and governance alignment.</p>
+        <h3>System Architecture</h3>
+        <p>Enterprise and solution architecture design.</p>
+      </div>
+
+      <div class="card">
+        <h3>Engineering Delivery</h3>
+        <p>Build and implementation of modern systems.</p>
+      </div>
+
+      <div class="card">
+        <h3>Program Management</h3>
+        <p>Strategic execution of complex initiatives.</p>
       </div>
 
       <div class="card">
         <h3>Platform Engineering</h3>
-        <p>Internal platforms and developer enablement systems.</p>
-      </div>
-
-      <div class="card">
-        <h3>Systems Integration</h3>
-        <p>API and event-driven integration layers.</p>
+        <p>Internal platforms and engineering enablement.</p>
       </div>
 
       <div class="card">
         <h3>Reliability Engineering</h3>
-        <p>SRE practices, observability, and production stability.</p>
+        <p>SRE, observability, and production stability.</p>
       </div>
 
       <div class="card">
         <h3>Performance Engineering</h3>
-        <p>System optimisation, scalability, and load resilience.</p>
-      </div>
-
-      <div class="card">
-        <h3>Automation & Delivery</h3>
-        <p>CI/CD pipelines and engineering efficiency systems.</p>
+        <p>Scalability, optimisation, and system efficiency.</p>
       </div>
 
     </div>
@@ -372,7 +375,7 @@ footer{
       <div style="margin-top:16px;display:flex;flex-direction:column;gap:12px;">
         <a class="btn" href="mailto:info@venras.com">Email Us</a>
         <a class="btn btn-dark" href="mailto:info@venras.com?subject=Consultation">
-          Request Consultation
+          Request Contact
         </a>
       </div>
 
