@@ -71,9 +71,11 @@ body {
 .btn {
     background:#2563eb;
     color:white;
-    padding:8px 16px;
+    padding:10px 18px;
     border-radius:6px;
     text-decoration:none;
+    border:none;
+    cursor:pointer;
 }
 
 /* HERO */
@@ -386,6 +388,25 @@ We partner with organisations to solve complex technology challenges across clou
 <div class="footer">
 <p>© 2026 VENRAS. All rights reserved.</p>
 </div>
+
+<script>
+function sendMail(e) {
+    e.preventDefault();
+
+    const name = document.querySelector('[name="name"]').value;
+    const email = document.querySelector('[name="email"]').value;
+    const message = document.querySelector('[name="message"]').value;
+
+    const subject = encodeURIComponent("VENRAS Enquiry");
+    const body = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n\n" +
+        "Requirement:\n" + message
+    );
+
+    window.location.href = `mailto:info@venras.com?subject=${subject}&body=${body}`;
+}
+</script>
 
 </body>
 </html>
