@@ -1,170 +1,497 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>VENRAS | Enterprise Consulting & Engineering</title>
+  <title>VENRAS | Enterprise Consulting & Engineering</title>
 
-<style>
-:root{
-  --primary:#2563eb;
-  --text:#111827;
-  --muted:#6b7280;
-  --border:#e5e7eb;
-}
+  <meta name="description" content="VENRAS provides enterprise advisory, architecture, engineering, program management, and technology delivery services." />
+  <meta name="theme-color" content="#2563eb" />
 
-*{box-sizing:border-box;margin:0;padding:0}
+  <style>
+    :root {
+      --primary: #2563eb;
+      --text: #111827;
+      --muted: #6b7280;
+      --bg: #ffffff;
+      --soft: #f9fafb;
+      --border: #e5e7eb;
+    }
 
-body{
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  color:var(--text);
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* =========================
-   HEADER (FIXED BALANCE)
-========================= */
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
 
-header{
-  position:sticky;
-  top:0;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--border);
-  z-index:100;
-}
+    /* =========================
+       HEADER
+    ========================= */
 
-/* 🔥 GRID INSTEAD OF FLEX */
-.nav{
-  display:grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items:center;
-  padding:14px 0;
-  max-width:1100px;
-  margin:auto;
-  padding-left:20px;
-  padding-right:20px;
-}
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
 
-/* LEFT SLOT (intentional empty balance) */
-.nav-left{
-  height:1px;
-}
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 14px 20px;
 
-/* BRAND CENTER-LEFT OPTICAL POSITION */
-.brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  font-weight:800;
-  letter-spacing:-0.02em;
-}
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+    }
 
-.brand a{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  text-decoration:none;
-  color:var(--text);
-  font-size:18px;
-}
+    .nav-left {
+      height: 1px;
+    }
 
-/* 🔥 LOGO REFINED */
-.logo{
-  width:44px;
-  height:44px;
-  display:grid;
-  place-items:center;
-}
+    /* BRAND */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
 
-/* RIGHT NAV */
-.nav-right{
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-  gap:18px;
-}
+    .brand a {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 18px;
+    }
 
-.nav-right a{
-  text-decoration:none;
-  color:var(--muted);
-  font-weight:500;
-}
+    /* LOGO */
+    .logo {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+    }
 
-.nav-right a:hover{
-  color:var(--text);
-}
+    /* NAV RIGHT */
+    .nav-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 18px;
+    }
 
-/* CTA */
-.cta{
-  background:#111827;
-  color:#fff !important;
-  padding:10px 14px;
-  border-radius:10px;
-  font-weight:600;
-}
+    .nav-right a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+    }
 
-/* MOBILE */
-@media(max-width:768px){
-  .nav{
-    grid-template-columns:1fr auto;
-  }
+    .nav-right a:hover {
+      color: var(--text);
+    }
 
-  .nav-right a:not(.cta){
-    display:none;
-  }
+    .cta {
+      background: #111827;
+      color: #ffffff !important;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
 
-  .nav-left{display:none}
-}
-</style>
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 140px 0 100px;
+      background: linear-gradient(180deg, #f9fafb, #ffffff);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 56px;
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .highlight {
+      color: var(--primary);
+    }
+
+    .hero p {
+      margin-top: 18px;
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 580px;
+    }
+
+    .actions {
+      margin-top: 26px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 11px 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn-dark {
+      background: #111827;
+    }
+
+    .visual {
+      height: 340px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.15), transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(96, 165, 250, 0.15), transparent 60%);
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .title h2 {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .title p {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #ffffff;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111827;
+      color: #ffffff;
+      text-align: center;
+      padding: 28px;
+      font-size: 14px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 768px) {
+      .nav {
+        grid-template-columns: 1fr auto;
+      }
+
+      .nav-right a:not(.cta) {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
+  <!-- =========================
+       HEADER
+  ========================= -->
+  <header>
+    <div class="nav">
 
-    <div class="nav-left"></div>
+      <div class="nav-left"></div>
 
-    <!-- BRAND -->
-    <div class="brand">
-      <a href="#top">
+      <!-- BRAND -->
+      <div class="brand">
+        <a href="#top">
 
-        <div class="logo">
-          <svg width="44" height="44" viewBox="0 0 40 40">
-            <defs>
-              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#2563eb"/>
-                <stop offset="100%" stop-color="#60a5fa"/>
-              </linearGradient>
-            </defs>
+          <div class="logo">
+            <svg width="44" height="44" viewBox="0 0 40 40">
+              <defs>
+                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#2563eb" />
+                  <stop offset="100%" stop-color="#60a5fa" />
+                </linearGradient>
+              </defs>
 
-            <path d="M10 10 L20 32 L30 10"
-                  stroke="url(#g)"
-                  stroke-width="3.4"
-                  stroke-linecap="round"
-                  fill="none"/>
+              <path d="M10 10 L20 32 L30 10"
+                    stroke="url(#g)"
+                    stroke-width="3.4"
+                    stroke-linecap="round"
+                    fill="none" />
 
-            <circle cx="10" cy="10" r="2.2" fill="#2563eb"/>
-            <circle cx="20" cy="32" r="2.2" fill="#2563eb"/>
-            <circle cx="30" cy="10" r="2.2" fill="#2563eb"/>
-          </svg>
+              <circle cx="10" cy="10" r="2.2" fill="#2563eb" />
+              <circle cx="20" cy="32" r="2.2" fill="#2563eb" />
+              <circle cx="30" cy="10" r="2.2" fill="#2563eb" />
+            </svg>
+          </div>
+
+          VENRAS
+        </a>
+      </div>
+
+      <!-- NAV -->
+      <div class="nav-right">
+        <a href="#advisory">Advisory</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#delivery">Engineering & Delivery</a>
+        <a class="cta" href="#contact">Contact</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================
+       HERO
+  ========================= -->
+  <section id="top" class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+        <h1>
+          Enterprise Consulting<br />
+          <span class="highlight">Architecture & Engineering</span>
+        </h1>
+
+        <p>
+          VENRAS partners with organisations across advisory, architecture design,
+          engineering delivery, and strategic program execution.
+        </p>
+
+        <div class="actions">
+          <a class="btn" href="#contact">Contact</a>
+          <a class="btn btn-dark" href="#advisory">Explore</a>
+        </div>
+      </div>
+
+      <div class="visual"></div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       ADVISORY
+  ========================= -->
+  <section id="advisory">
+    <div class="container">
+
+      <div class="title">
+        <h2>Advisory</h2>
+        <p>Strategy, planning, and operating model design</p>
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>Technology Strategy</h3>
+          <p>Enterprise direction and transformation planning.</p>
         </div>
 
-        VENRAS
-      </a>
-    </div>
+        <div class="card">
+          <h3>Program Definition</h3>
+          <p>Structuring initiatives and execution frameworks.</p>
+        </div>
 
-    <!-- RIGHT -->
-    <div class="nav-right">
-      <a href="#advisory">Advisory</a>
-      <a href="#architecture">Architecture</a>
-      <a href="#delivery">Delivery</a>
-      <a class="cta" href="#contact">Contact</a>
-    </div>
+        <div class="card">
+          <h3>Operating Models</h3>
+          <p>Governance, delivery structure, and alignment.</p>
+        </div>
 
-  </div>
-</header>
+        <div class="card">
+          <h3>Capability Planning</h3>
+          <p>Organisational and engineering capability design.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       ARCHITECTURE
+  ========================= -->
+  <section id="architecture" style="background:#f9fafb;">
+    <div class="container">
+
+      <div class="title">
+        <h2>Architecture</h2>
+        <p>Designing scalable enterprise systems</p>
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>Enterprise Architecture</h3>
+          <p>End-to-end system structure and governance.</p>
+        </div>
+
+        <div class="card">
+          <h3>Solution Architecture</h3>
+          <p>Application and platform design.</p>
+        </div>
+
+        <div class="card">
+          <h3>Integration Architecture</h3>
+          <p>API and event-driven system connectivity.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       DELIVERY
+  ========================= -->
+  <section id="delivery">
+    <div class="container">
+
+      <div class="title">
+        <h2>Engineering & Delivery</h2>
+        <p>Building, operating, and scaling enterprise systems</p>
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>Engineering Delivery</h3>
+          <p>Implementation of platforms and enterprise systems.</p>
+        </div>
+
+        <div class="card">
+          <h3>Program Management</h3>
+          <p>Strategic execution of complex enterprise initiatives.</p>
+        </div>
+
+        <div class="card">
+          <h3>Platform Engineering</h3>
+          <p>Internal platforms and developer enablement systems.</p>
+        </div>
+
+        <div class="card">
+          <h3>Reliability Engineering</h3>
+          <p>SRE practices, observability, and production stability.</p>
+        </div>
+
+        <div class="card">
+          <h3>Performance Engineering</h3>
+          <p>Scalability, optimisation, and system efficiency.</p>
+        </div>
+
+        <div class="card">
+          <h3>Automation Systems</h3>
+          <p>CI/CD and engineering delivery acceleration.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+  <section id="contact">
+    <div class="container">
+
+      <div class="title">
+        <h2>Contact</h2>
+        <p>We respond within 24 hours</p>
+      </div>
+
+      <div class="card" style="max-width:520px;margin:auto;text-align:center;">
+
+        <h3>Start a conversation</h3>
+
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:12px;">
+          <a class="btn" href="mailto:info@venras.com">Email Us</a>
+          <a class="btn btn-dark" href="mailto:info@venras.com?subject=Consultation">
+            Request Contact
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+  <footer>
+    © 2026 VENRAS. All rights reserved.
+  </footer>
 
 </body>
 </html>
