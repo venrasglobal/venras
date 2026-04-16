@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>VENRAS | IT Consulting, Staffing & Digital Solutions</title>
+<title>VENRAS | IT Consulting, Cloud & Digital Transformation Services</title>
 
-<meta name="description" content="VENRAS is a modern IT consulting firm providing cloud services, digital transformation, platform engineering, and resource augmentation for enterprise teams.">
-<meta name="theme-color" content="#2563eb">
-<link rel="canonical" href="https://venras.com">
+<meta name="description" content="VENRAS delivers IT consulting, cloud engineering, digital transformation, platform engineering, and enterprise staffing solutions." />
+<meta name="theme-color" content="#2563eb" />
+<link rel="canonical" href="https://venras.com" />
 
 <!-- Open Graph -->
-<meta property="og:title" content="VENRAS | IT Consulting & Technology Services">
-<meta property="og:description" content="IT consulting, staffing, cloud solutions, and digital transformation services.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://venras.com">
+<meta property="og:title" content="VENRAS | IT Consulting & Technology Services" />
+<meta property="og:description" content="Cloud, consulting, staffing, and digital transformation services for enterprise teams." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://venras.com" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="VENRAS | IT Consulting & Cloud Services" />
+<meta name="twitter:description" content="Enterprise IT consulting, cloud engineering, and digital transformation." />
 
 <style>
 :root{
@@ -33,7 +38,28 @@
 body{
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
   color:var(--text);
+  background:var(--bg);
   line-height:1.6;
+}
+
+/* Accessibility */
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  left:20px;
+  top:20px;
+  width:auto;
+  height:auto;
+  background:#000;
+  color:#fff;
+  padding:10px;
+  z-index:9999;
 }
 
 /* Layout */
@@ -43,13 +69,14 @@ body{
   padding:0 20px;
 }
 
-/* NAV */
+/* HEADER */
 header{
   position:sticky;
   top:0;
-  background:rgba(255,255,255,.92);
+  background:rgba(255,255,255,.95);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
+  z-index:1000;
 }
 
 .nav{
@@ -64,6 +91,8 @@ header{
   align-items:center;
   gap:10px;
   font-weight:800;
+  text-decoration:none;
+  color:inherit;
 }
 
 .logo{
@@ -76,24 +105,42 @@ header{
   font-weight:800;
 }
 
-.nav a{
+/* Nav */
+.nav-links{
+  display:flex;
+  gap:18px;
+  list-style:none;
+}
+
+.nav-links a{
   text-decoration:none;
   color:var(--muted);
   font-weight:500;
 }
 
-.nav-links{
-  display:flex;
-  gap:18px;
+.nav-toggle{
+  display:none;
+  border:1px solid var(--border);
+  background:#fff;
+  padding:8px 12px;
+  border-radius:10px;
 }
 
+/* Buttons */
 .btn{
+  display:inline-block;
   background:var(--primary);
   color:#fff;
   padding:10px 16px;
   border-radius:10px;
   text-decoration:none;
   font-weight:600;
+  border:none;
+  cursor:pointer;
+}
+
+.btn.secondary{
+  background:#111827;
 }
 
 /* HERO */
@@ -124,7 +171,7 @@ h1{
   font-size:18px;
 }
 
-/* CARDS */
+/* Cards */
 .hero-cards{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -140,25 +187,18 @@ h1{
   text-align:center;
 }
 
-/* SECTIONS */
-section{
-  padding:80px 0;
-}
+/* Sections */
+section{padding:80px 0}
 
 .section-title{
   text-align:center;
   margin-bottom:40px;
 }
 
-.section-title h2{
-  font-size:34px;
-}
+.section-title h2{font-size:34px}
+.section-title p{color:var(--muted)}
 
-.section-title p{
-  color:var(--muted);
-}
-
-/* GRID */
+/* Grid */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -172,18 +212,8 @@ section{
   background:#fff;
 }
 
-.box h3{
-  margin-bottom:6px;
-}
-
-.box p{
-  color:var(--muted);
-}
-
-/* CONTACT */
-.contact{
-  background:var(--soft);
-}
+/* Contact */
+.contact{background:var(--soft)}
 
 .contact-card{
   max-width:560px;
@@ -192,22 +222,24 @@ section{
   border-radius:var(--radius);
   padding:30px;
   box-shadow:var(--shadow);
-  text-align:center;
 }
 
-.contact-actions{
-  margin-top:18px;
+/* Form */
+form{
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:10px;
+  margin-top:16px;
 }
 
-/* BUTTON LINK */
-.btn-secondary{
-  background:#111827;
+input, textarea{
+  padding:10px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  font:inherit;
 }
 
-/* FOOTER */
+/* Footer */
 footer{
   background:#111827;
   color:#fff;
@@ -215,11 +247,24 @@ footer{
   padding:30px;
 }
 
-/* MOBILE */
+/* Mobile */
 @media(max-width:768px){
   .hero-grid{grid-template-columns:1fr}
   h1{font-size:34px}
-  .nav-links{display:none}
+
+  .nav-toggle{display:block}
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    right:20px;
+    top:60px;
+    background:#fff;
+    padding:12px;
+    border:1px solid var(--border);
+    border-radius:12px;
+  }
+  .nav-links.active{display:flex}
 }
 </style>
 
@@ -227,48 +272,51 @@ footer{
 
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header>
 <div class="container nav">
 
-<div class="brand">
+<a class="brand" href="#">
 <div class="logo">V</div>
 VENRAS
-</div>
+</a>
 
-<nav class="nav-links">
-<a href="#services">Services</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
+<button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+
+<ul class="nav-links" id="nav">
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
 </div>
 </header>
 
-<main>
+<main id="main">
 
-<!-- HERO -->
 <section class="hero">
 <div class="container hero-grid">
 
 <div>
 <h1>
-Enterprise <span class="highlight">IT Consulting</span> & Technology Services
+Enterprise <span class="highlight">IT Consulting</span> & Cloud Solutions
 </h1>
 
 <p>
-VENRAS is a modern IT services firm delivering consulting, cloud solutions,
-digital transformation, and resource augmentation for enterprise teams.
+VENRAS delivers enterprise-grade consulting, cloud architecture,
+digital transformation, and embedded engineering talent.
 </p>
 
 <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
 <a class="btn" href="#contact">Get in Touch</a>
-<a class="btn btn-secondary" href="#services">Explore Services</a>
+<a class="btn secondary" href="#services">Explore Services</a>
 </div>
 
 </div>
 
 <div class="hero-cards">
-<div class="card">Cloud & Infrastructure</div>
+<div class="card">Cloud Infrastructure</div>
 <div class="card">IT Staffing</div>
 <div class="card">Digital Transformation</div>
 <div class="card">Platform Engineering</div>
@@ -277,92 +325,53 @@ digital transformation, and resource augmentation for enterprise teams.
 </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
 <div class="container">
 
 <div class="section-title">
 <h2>Services</h2>
-<p>End-to-end IT consulting and delivery capabilities</p>
+<p>End-to-end enterprise technology delivery</p>
 </div>
 
 <div class="grid">
 
-<div class="box">
-<h3>IT Consulting</h3>
-<p>Architecture, advisory, and enterprise technology strategy.</p>
-</div>
-
-<div class="box">
-<h3>Cloud Solutions</h3>
-<p>Cloud migration, optimisation, and modern infrastructure design.</p>
-</div>
-
-<div class="box">
-<h3>Resource Augmentation</h3>
-<p>Skilled engineers and consultants embedded into your teams.</p>
-</div>
-
-<div class="box">
-<h3>Digital Transformation</h3>
-<p>Modernisation of legacy systems and enterprise platforms.</p>
-</div>
-
-<div class="box">
-<h3>Managed Delivery</h3>
-<p>Project and program delivery across enterprise environments.</p>
-</div>
-
-<div class="box">
-<h3>Data & Integration</h3>
-<p>APIs, system integration, and data platform solutions.</p>
-</div>
+<div class="box"><h3>IT Consulting</h3><p>Architecture and strategy for enterprise systems.</p></div>
+<div class="box"><h3>Cloud Engineering</h3><p>Migration, optimisation, and cloud-native design.</p></div>
+<div class="box"><h3>Resource Augmentation</h3><p>Embedded engineering and delivery teams.</p></div>
+<div class="box"><h3>Digital Transformation</h3><p>Legacy modernisation and platform upgrades.</p></div>
+<div class="box"><h3>Managed Delivery</h3><p>End-to-end program execution and governance.</p></div>
+<div class="box"><h3>Data & Integration</h3><p>APIs, integration layers, and data platforms.</p></div>
 
 </div>
 
 </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
 <div class="container section-title">
-
 <h2>About VENRAS</h2>
-<p>
-A technology consulting partner focused on flexibility, scalability, and measurable delivery outcomes across enterprise IT environments.
-</p>
-
+<p>We focus on scalable engineering delivery with measurable business outcomes.</p>
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact">
 <div class="container">
 
 <div class="section-title">
 <h2>Contact</h2>
-<p>We typically respond within 24 hours</p>
+<p>We respond within 24 hours</p>
 </div>
 
 <div class="contact-card">
 
-<h3>Let’s work together</h3>
+<h3>Start a conversation</h3>
 
-<p style="color:var(--muted);margin-top:8px">
-For consulting, staffing, or project inquiries:
-</p>
-
-<div class="contact-actions">
-
-<a class="btn" href="mailto:info@venras.com?subject=VENRAS%20Inquiry">
-Email info@venras.com
-</a>
-
-<a class="btn btn-secondary" href="mailto:info@venras.com?subject=Consultation%20Request">
-Request Consultation
-</a>
-
-</div>
+<form onsubmit="event.preventDefault(); alert('Submitted');">
+<input type="text" placeholder="Name" required />
+<input type="email" placeholder="Email" required />
+<textarea rows="4" placeholder="Project details" required></textarea>
+<button class="btn" type="submit">Send Message</button>
+</form>
 
 </div>
 
@@ -374,6 +383,27 @@ Request Consultation
 <footer>
 © 2026 VENRAS. All rights reserved.
 </footer>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"VENRAS",
+  "url":"https://venras.com",
+  "description":"IT consulting and cloud engineering services for enterprise clients."
+}
+</script>
+
+<script>
+const toggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('.nav-links');
+
+toggle?.addEventListener('click', () => {
+  const open = nav.classList.toggle('active');
+  toggle.setAttribute('aria-expanded', open);
+});
+</script>
 
 </body>
 </html>
