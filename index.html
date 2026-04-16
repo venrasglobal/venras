@@ -4,24 +4,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>VENRAS | Enterprise Architecture, Engineering & Cloud Consulting</title>
+<title>VENRAS | Enterprise IT Consulting & Engineering</title>
 
-<meta name="description" content="VENRAS provides enterprise architecture, engineering, cloud consulting, digital transformation, and staffing services.">
+<meta name="description" content="VENRAS delivers enterprise IT consulting, cloud architecture, engineering, and staffing solutions.">
 <meta name="theme-color" content="#2563eb">
 
 <style>
 :root{
   --primary:#2563eb;
-  --primary-light:#60a5fa;
-
   --text:#111827;
   --muted:#6b7280;
-
   --bg:#ffffff;
   --soft:#f9fafb;
   --border:#e5e7eb;
-
-  --radius:14px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -33,8 +28,9 @@ body{
   line-height:1.6;
 }
 
+/* CONTAINER */
 .container{
-  max-width:1140px;
+  max-width:1100px;
   margin:auto;
   padding:0 20px;
 }
@@ -43,7 +39,7 @@ body{
 header{
   position:sticky;
   top:0;
-  background:rgba(255,255,255,.9);
+  background:rgba(255,255,255,.92);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
   z-index:100;
@@ -63,25 +59,20 @@ header{
   font-weight:800;
 }
 
-.logo-wrap{
-  width:44px;
-  height:44px;
+/* LOGO BIGGER + CLEANER */
+.logo{
+  width:46px;
+  height:46px;
   display:grid;
   place-items:center;
 }
 
-.nav-links{
-  display:flex;
-  gap:18px;
-}
-
-.nav-links a{
+.nav a{
   text-decoration:none;
   color:var(--muted);
+  margin-left:18px;
   font-weight:500;
 }
-
-.nav-links a:hover{color:var(--text)}
 
 .btn{
   background:var(--primary);
@@ -94,21 +85,23 @@ header{
 
 /* HERO */
 .hero{
-  padding:120px 0 90px;
-  background:linear-gradient(180deg,#f9fafb,#ffffff);
+  padding:130px 0 100px;
+  background:linear-gradient(180deg,#f9fafb,#fff);
+  text-align:left;
 }
 
 .hero-grid{
   display:grid;
-  grid-template-columns:1.2fr .8fr;
+  grid-template-columns:1.3fr .7fr;
   gap:60px;
   align-items:center;
 }
 
 h1{
-  font-size:52px;
+  font-size:54px;
   line-height:1.05;
   font-weight:800;
+  letter-spacing:-0.02em;
 }
 
 .highlight{color:var(--primary)}
@@ -120,81 +113,91 @@ h1{
   max-width:560px;
 }
 
-.hero-actions{
+.actions{
   margin-top:26px;
   display:flex;
   gap:12px;
-  flex-wrap:wrap;
 }
 
-.hero-visual{
-  height:300px;
-  border-radius:16px;
+/* HERO VISUAL (cleaner) */
+.visual{
+  height:320px;
+  border-radius:18px;
   border:1px solid var(--border);
   background:
-    radial-gradient(circle at 25% 25%, rgba(37,99,235,.18), transparent 55%),
-    radial-gradient(circle at 75% 75%, rgba(96,165,250,.18), transparent 55%);
+    radial-gradient(circle at 30% 30%, rgba(37,99,235,.15), transparent 60%),
+    radial-gradient(circle at 70% 70%, rgba(96,165,250,.15), transparent 60%);
 }
 
-/* SECTIONS */
+/* SECTION */
 section{
-  padding:90px 0;
+  padding:100px 0;
 }
 
-.section-title{
+.title{
   text-align:center;
   margin-bottom:50px;
 }
 
-.section-title h2{
-  font-size:36px;
+.title h2{
+  font-size:38px;
   font-weight:800;
 }
 
-.section-title p{
+.title p{
   color:var(--muted);
   margin-top:8px;
 }
 
-/* GRID */
+/* SIMPLE GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:18px;
+  gap:20px;
 }
 
+/* MINIMAL CARD (more premium) */
 .card{
-  border:1px solid var(--border);
-  border-radius:var(--radius);
   padding:22px;
+  border:1px solid var(--border);
+  border-radius:16px;
   background:#fff;
-  transition:.2s ease;
-}
-
-.card:hover{
-  transform:translateY(-3px);
 }
 
 .card h3{
+  font-size:16px;
   margin-bottom:6px;
 }
 
 .card p{
-  color:var(--muted);
   font-size:14px;
+  color:var(--muted);
 }
 
-/* SPECIAL SECTION */
-.soft{background:var(--soft)}
+/* SINGLE CONSOLIDATED CAPABILITY BLOCK */
+.capability{
+  background:var(--soft);
+}
 
-/* ARCHITECTURE HEADER STYLE */
-.kicker{
-  color:var(--primary);
-  font-weight:700;
-  font-size:13px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  margin-bottom:6px;
+/* CONTACT */
+.contact-box{
+  max-width:520px;
+  margin:auto;
+  padding:28px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  text-align:center;
+}
+
+.contact-box h3{
+  margin-bottom:10px;
+}
+
+.contact-actions{
+  margin-top:16px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
 /* FOOTER */
@@ -202,7 +205,7 @@ footer{
   background:#111827;
   color:#fff;
   text-align:center;
-  padding:30px;
+  padding:28px;
   font-size:14px;
 }
 
@@ -210,7 +213,7 @@ footer{
 @media(max-width:768px){
   .hero-grid{grid-template-columns:1fr}
   h1{font-size:38px}
-  .nav-links{display:none}
+  .nav a{display:none}
 }
 </style>
 </head>
@@ -223,8 +226,8 @@ footer{
     <div class="brand">
 
       <!-- LOGO -->
-      <div class="logo-wrap">
-        <svg width="44" height="44" viewBox="0 0 40 40">
+      <div class="logo">
+        <svg width="46" height="46" viewBox="0 0 40 40">
           <defs>
             <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stop-color="#2563eb"/>
@@ -247,11 +250,9 @@ footer{
       VENRAS
     </div>
 
-    <nav class="nav-links">
+    <nav>
       <a href="#services">Services</a>
-      <a href="#architecture">Architecture</a>
-      <a href="#engineering">Engineering</a>
-      <a href="#engagement">Engagement</a>
+      <a href="#capabilities">Capabilities</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -266,45 +267,45 @@ footer{
 
     <div>
       <h1>
-        Enterprise Architecture,<br>
-        Engineering & <span class="highlight">Cloud Consulting</span>
+        Enterprise IT Consulting<br>
+        <span class="highlight">Architecture & Engineering</span>
       </h1>
 
       <p>
-        VENRAS delivers enterprise IT consulting, cloud architecture, platform engineering,
-        digital transformation, and staffing solutions across modern technology environments.
+        VENRAS delivers enterprise consulting, cloud architecture, engineering,
+        and staffing solutions for modern technology environments.
       </p>
 
-      <div class="hero-actions">
+      <div class="actions">
         <a class="btn" href="#contact">Contact</a>
-        <a class="btn" style="background:#111827" href="#services">Explore Services</a>
+        <a class="btn" style="background:#111827" href="#services">Explore</a>
       </div>
     </div>
 
-    <div class="hero-visual"></div>
+    <div class="visual"></div>
 
   </div>
 </section>
 
-<!-- SERVICES (HIGH LEVEL) -->
+<!-- SERVICES (SIMPLIFIED CORE) -->
 <section id="services">
   <div class="container">
 
-    <div class="section-title">
-      <h2>Core Services</h2>
-      <p>Enterprise consulting and delivery offerings</p>
+    <div class="title">
+      <h2>Services</h2>
+      <p>Core enterprise offerings</p>
     </div>
 
     <div class="grid">
 
       <div class="card">
         <h3>IT Consulting</h3>
-        <p>Technology strategy, advisory, and enterprise planning.</p>
+        <p>Enterprise advisory and technology strategy.</p>
       </div>
 
       <div class="card">
         <h3>Cloud Solutions</h3>
-        <p>Cloud migration, optimisation, and modern infrastructure.</p>
+        <p>Migration, optimisation, and cloud architecture.</p>
       </div>
 
       <div class="card">
@@ -313,102 +314,53 @@ footer{
       </div>
 
       <div class="card">
-        <h3>Staffing & Augmentation</h3>
-        <p>Embedded engineering teams and specialist talent delivery.</p>
+        <h3>Staffing & Teams</h3>
+        <p>Engineering talent and embedded delivery teams.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ARCHITECTURE LAYER (NEW) -->
-<section id="architecture" class="soft">
+<!-- CAPABILITIES (ARCHITECTURE + ENGINEERING MERGED) -->
+<section id="capabilities" class="capability">
   <div class="container">
 
-    <div class="section-title">
-      <div class="kicker">Enterprise Layer</div>
-      <h2>Architecture</h2>
-      <p>Designing scalable and resilient enterprise systems</p>
+    <div class="title">
+      <h2>Architecture & Engineering</h2>
+      <p>Designing and delivering scalable enterprise systems</p>
     </div>
 
     <div class="grid">
 
       <div class="card">
         <h3>Enterprise Architecture</h3>
-        <p>End-to-end system structure, governance, and alignment.</p>
-      </div>
-
-      <div class="card">
-        <h3>Solution Architecture</h3>
-        <p>Application-level design across platforms and integrations.</p>
+        <p>System structure, governance, and alignment.</p>
       </div>
 
       <div class="card">
         <h3>Cloud Architecture</h3>
-        <p>Scalable, secure, and cost-optimised cloud design.</p>
+        <p>Scalable, secure cloud platform design.</p>
       </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ENGINEERING LAYER (NEW) -->
-<section id="engineering">
-  <div class="container">
-
-    <div class="section-title">
-      <div class="kicker">Delivery Layer</div>
-      <h2>Engineering</h2>
-      <p>Building and operating modern platforms and systems</p>
-    </div>
-
-    <div class="grid">
 
       <div class="card">
         <h3>Platform Engineering</h3>
-        <p>Internal developer platforms and scalable infrastructure.</p>
+        <p>Internal platforms and developer enablement.</p>
       </div>
 
       <div class="card">
         <h3>DevOps & Automation</h3>
-        <p>CI/CD pipelines, infrastructure automation, and reliability.</p>
+        <p>CI/CD, infrastructure automation, reliability.</p>
       </div>
 
       <div class="card">
         <h3>System Integration</h3>
-        <p>API-driven integration across enterprise ecosystems.</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ENGAGEMENT -->
-<section id="engagement" class="soft">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Engagement Models</h2>
-      <p>How we partner with enterprise teams</p>
-    </div>
-
-    <div class="grid">
-
-      <div class="card">
-        <h3>Advisory</h3>
-        <p>Strategic consulting and architecture guidance.</p>
+        <p>API-driven enterprise integration.</p>
       </div>
 
       <div class="card">
-        <h3>Delivery Teams</h3>
-        <p>End-to-end execution of defined initiatives.</p>
-      </div>
-
-      <div class="card">
-        <h3>Augmentation</h3>
-        <p>Embedded engineers and specialists within client teams.</p>
+        <h3>Data Platforms</h3>
+        <p>Scalable data and analytics systems.</p>
       </div>
 
     </div>
@@ -420,16 +372,16 @@ footer{
 <section id="contact">
   <div class="container">
 
-    <div class="section-title">
+    <div class="title">
       <h2>Contact</h2>
       <p>We respond within 24 hours</p>
     </div>
 
-    <div class="card" style="max-width:520px;margin:auto;text-align:center;">
+    <div class="contact-box">
 
       <h3>Start a conversation</h3>
 
-      <div style="margin-top:18px;display:flex;flex-direction:column;gap:12px;">
+      <div class="contact-actions">
         <a class="btn" href="mailto:info@venras.com">Email Us</a>
         <a class="btn" style="background:#111827" href="mailto:info@venras.com?subject=Consultation">
           Request Consultation
