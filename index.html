@@ -6,7 +6,7 @@
 
 <title>VENRAS | Enterprise Consulting & Engineering</title>
 
-<meta name="description" content="VENRAS provides enterprise advisory, architecture, engineering, program management, and cloud transformation services." />
+<meta name="description" content="VENRAS provides enterprise advisory, architecture & engineering, and cloud transformation services." />
 
 <style>
 :root {
@@ -15,6 +15,7 @@
   --muted: #6b7280;
   --border: #e5e7eb;
   --bg: #ffffff;
+  --soft: #f9fafb;
 }
 
 * {
@@ -30,21 +31,20 @@ body {
   line-height: 1.6;
 }
 
+/* smooth scroll */
 html { scroll-behavior: smooth; }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255,255,255,0.78);
+  background: rgba(255,255,255,0.85);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid transparent;
-}
 
-header.scrolled {
-  background: rgba(255,255,255,0.95);
+  /* FIX: clear separation from hero */
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 12px rgba(0,0,0,0.04);
 }
 
 .nav {
@@ -63,7 +63,6 @@ header.scrolled {
   text-decoration:none;
 }
 
-/* LOGO (SAFE + CLEAN) */
 .logo svg {
   height:40px;
   width:auto;
@@ -81,6 +80,7 @@ nav a {
   text-decoration:none;
   color:var(--muted);
   font-weight:500;
+  transition:0.2s;
 }
 
 nav a:hover {
@@ -94,16 +94,27 @@ nav a:hover {
   border-radius:10px;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero {
-  padding:140px 0 90px;
-  background:linear-gradient(180deg,#f9fafb,#fff);
+  padding:140px 0 100px;
+
+  /* FIX: visual separation from header */
+  background: linear-gradient(180deg, #ffffff 0%, var(--soft) 100%);
+  border-bottom: 1px solid var(--border);
 }
 
 .container {
   max-width:1100px;
   margin:auto;
   padding:0 20px;
+}
+
+/* hero grid */
+.hero .container {
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:60px;
+  align-items:center;
 }
 
 h1 {
@@ -144,9 +155,14 @@ h1 {
   background:#111827;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 section {
   padding:100px 0;
+}
+
+/* alternating section tone improves separation */
+section:nth-of-type(even) {
+  background: var(--soft);
 }
 
 .section-title {
@@ -190,7 +206,7 @@ section {
   margin-bottom:8px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
   background:#111827;
   color:#fff;
@@ -199,10 +215,14 @@ footer {
   font-size:13px;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width:768px) {
   h1 { font-size:40px; }
   .subhead { font-size:28px; }
+
+  .hero .container {
+    grid-template-columns:1fr;
+  }
 
   nav ul {
     flex-wrap:wrap;
@@ -270,11 +290,9 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <div class="container" style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:60px;align-items:center;">
+  <div class="container">
 
-    <!-- LEFT: TEXT -->
     <div>
-
       <h1>
         Enterprise Consulting
         <span class="subhead">Architecture & Engineering</span>
@@ -289,62 +307,41 @@ footer {
         <a class="btn" href="#contact">Contact</a>
         <a class="btn btn-dark" href="#architecture">Explore</a>
       </div>
-
     </div>
 
-    <!-- RIGHT: ARCHITECTURE VISUAL -->
+    <!-- RIGHT VISUAL -->
     <div style="position:relative;">
-
       <svg viewBox="0 0 420 420" width="100%" style="max-width:420px;">
+        <circle cx="210" cy="210" r="180" fill="rgba(37,99,235,0.08)" />
 
-        <!-- soft background glow -->
-        <defs>
-          <radialGradient id="glow" cx="50%" cy="50%" r="60%">
-            <stop offset="0%" stop-color="#2563eb" stop-opacity="0.12"/>
-            <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-
-        <circle cx="210" cy="210" r="180" fill="url(#glow)" />
-
-        <!-- nodes -->
         <circle cx="210" cy="80" r="6" fill="#2563eb"/>
         <circle cx="120" cy="200" r="6" fill="#2563eb"/>
         <circle cx="300" cy="200" r="6" fill="#2563eb"/>
         <circle cx="210" cy="320" r="6" fill="#2563eb"/>
-
-        <!-- center node -->
         <circle cx="210" cy="200" r="10" fill="#111827"/>
 
-        <!-- connections -->
-        <line x1="210" y1="80" x2="210" y2="190" stroke="#2563eb" stroke-opacity="0.5"/>
-        <line x1="120" y1="200" x2="200" y2="200" stroke="#2563eb" stroke-opacity="0.5"/>
-        <line x1="220" y1="200" x2="300" y2="200" stroke="#2563eb" stroke-opacity="0.5"/>
-        <line x1="210" y1="210" x2="210" y2="320" stroke="#2563eb" stroke-opacity="0.5"/>
+        <line x1="210" y1="80" x2="210" y2="190" stroke="#2563eb" opacity="0.5"/>
+        <line x1="120" y1="200" x2="200" y2="200" stroke="#2563eb" opacity="0.5"/>
+        <line x1="220" y1="200" x2="300" y2="200" stroke="#2563eb" opacity="0.5"/>
+        <line x1="210" y1="210" x2="210" y2="320" stroke="#2563eb" opacity="0.5"/>
 
-        <!-- labels -->
         <text x="210" y="55" text-anchor="middle" font-size="12" fill="#6b7280">Advisory</text>
         <text x="85" y="205" text-anchor="middle" font-size="12" fill="#6b7280">Architecture</text>
         <text x="335" y="205" text-anchor="middle" font-size="12" fill="#6b7280">Engineering</text>
         <text x="210" y="350" text-anchor="middle" font-size="12" fill="#6b7280">Delivery</text>
-
       </svg>
 
-      <!-- subtle caption -->
       <div style="text-align:center;margin-top:12px;color:#6b7280;font-size:13px;">
         Enterprise system lifecycle model
       </div>
-
     </div>
 
   </div>
 </section>
 
-
 <!-- ADVISORY -->
 <section id="advisory">
   <div class="container">
-
     <div class="section-title">
       <h2>Advisory</h2>
       <p>Strategy, governance, and operating model design</p>
@@ -369,21 +366,18 @@ footer {
         <p>Align organisational structure with delivery outcomes.</p>
       </div>
     </div>
-
   </div>
 </section>
 
 <!-- ARCHITECTURE & ENGINEERING -->
 <section id="architecture">
   <div class="container">
-
     <div class="section-title">
       <h2>Architecture & Engineering</h2>
-      <p>Design, build, and evolve modern cloud-native systems</p>
+      <p>Design, build, and operate modern cloud-native systems</p>
     </div>
 
     <div class="grid">
-
       <div class="card">
         <div class="capability">Architecture</div>
         <h3>System Design</h3>
@@ -407,23 +401,19 @@ footer {
         <h3>SRE & Observability</h3>
         <p>Ensure system reliability, monitoring, and operational excellence.</p>
       </div>
-
     </div>
-
   </div>
 </section>
 
 <!-- DELIVERY -->
 <section id="delivery">
   <div class="container">
-
     <div class="section-title">
       <h2>Delivery</h2>
-      <p>Execution, migration, and enterprise transformation</p>
+      <p>Execution and enterprise transformation programs</p>
     </div>
 
     <div class="grid">
-
       <div class="card">
         <div class="capability">Execution</div>
         <h3>Program Management</h3>
@@ -435,16 +425,13 @@ footer {
         <h3>Cloud Migration Programs</h3>
         <p>Deliver legacy system modernization and cloud migration initiatives.</p>
       </div>
-
     </div>
-
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
-
     <div class="card" style="max-width:540px;margin:auto;text-align:center;">
       <h2>Contact</h2>
       <p style="color:var(--muted);margin-top:6px;">
@@ -456,7 +443,6 @@ footer {
         <a class="btn btn-dark" href="mailto:info@venras.com">Request Consultation</a>
       </div>
     </div>
-
   </div>
 </section>
 
