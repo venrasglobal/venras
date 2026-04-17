@@ -338,30 +338,58 @@ footer {
     </div>
 
     <!-- RIGHT: SYSTEM LIFECYCLE DIAGRAM -->
-    <div aria-hidden="true">
-      <svg viewBox="0 0 420 420" width="100%">
-        <circle cx="210" cy="210" r="180" fill="rgba(37,99,235,0.08)" />
+	<div aria-hidden="true">
+  <svg viewBox="0 0 420 420" width="100%">
 
-        <!-- Nodes -->
-        <circle cx="210" cy="80" r="6" fill="#2563eb"/>
-        <circle cx="120" cy="200" r="6" fill="#2563eb"/>
-        <circle cx="300" cy="200" r="6" fill="#2563eb"/>
-        <circle cx="210" cy="320" r="6" fill="#2563eb"/>
-        <circle cx="210" cy="200" r="10" fill="#111827"/>
+    <!-- background ring -->
+    <circle cx="210" cy="210" r="180" fill="rgba(37,99,235,0.08)" />
 
-        <!-- Connections -->
-        <line x1="210" y1="80" x2="210" y2="190" stroke="#2563eb" opacity="0.5"/>
-        <line x1="120" y1="200" x2="200" y2="200" stroke="#2563eb" opacity="0.5"/>
-        <line x1="220" y1="200" x2="300" y2="200" stroke="#2563eb" opacity="0.5"/>
-        <line x1="210" y1="210" x2="210" y2="320" stroke="#2563eb" opacity="0.5"/>
+    <!-- nodes -->
+    <circle cx="210" cy="80" r="6" fill="#2563eb"/>
+    <circle cx="120" cy="200" r="6" fill="#2563eb"/>
+    <circle cx="300" cy="200" r="6" fill="#2563eb"/>
+    <circle cx="210" cy="320" r="6" fill="#2563eb"/>
+    <circle cx="210" cy="200" r="10" fill="#111827"/>
 
-        <!-- Labels -->
-        <text x="210" y="55" text-anchor="middle" font-size="12" fill="#6b7280">Advisory</text>
-        <text x="85" y="205" text-anchor="middle" font-size="12" fill="#6b7280">Architecture</text>
-        <text x="335" y="205" text-anchor="middle" font-size="12" fill="#6b7280">Engineering</text>
-        <text x="210" y="350" text-anchor="middle" font-size="12" fill="#6b7280">Delivery</text>
-      </svg>
-    </div>
+    <!-- connections -->
+    <line x1="210" y1="80" x2="210" y2="190" stroke="#2563eb" opacity="0.5"/>
+    <line x1="120" y1="200" x2="200" y2="200" stroke="#2563eb" opacity="0.5"/>
+    <line x1="220" y1="200" x2="300" y2="200" stroke="#2563eb" opacity="0.5"/>
+    <line x1="210" y1="210" x2="210" y2="320" stroke="#2563eb" opacity="0.5"/>
+
+    <!-- LABEL BACKGROUNDS (improves readability over overlaps) -->
+    <rect x="155" y="40" width="110" height="18" rx="6" fill="#ffffff" opacity="0.85"/>
+    <rect x="40" y="190" width="130" height="18" rx="6" fill="#ffffff" opacity="0.85"/>
+    <rect x="250" y="190" width="120" height="18" rx="6" fill="#ffffff" opacity="0.85"/>
+    <rect x="165" y="345" width="90" height="18" rx="6" fill="#ffffff" opacity="0.85"/>
+
+    <!-- LABELS (pushed away from nodes + improved contrast) -->
+    <text x="210" y="53"
+          text-anchor="middle"
+          font-size="12"
+          font-weight="600"
+          fill="#374151">Advisory</text>
+
+    <text x="105" y="204"
+          text-anchor="middle"
+          font-size="12"
+          font-weight="600"
+          fill="#374151">Architecture</text>
+
+    <text x="315" y="204"
+          text-anchor="middle"
+          font-size="12"
+          font-weight="600"
+          fill="#374151">Engineering</text>
+
+    <text x="210" y="360"
+          text-anchor="middle"
+          font-size="12"
+          font-weight="600"
+          fill="#374151">Delivery</text>
+
+  </svg>
+</div>
 
   </div>
 </section>
