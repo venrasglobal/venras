@@ -9,6 +9,10 @@
 <meta name="description" content="VENRAS provides enterprise advisory, architecture & engineering, and cloud transformation services." />
 
 <style>
+/* =========================
+   DESIGN TOKENS (GLOBAL THEME)
+   Centralised color system for maintainability
+========================= */
 :root {
   --primary: #2563eb;
   --text: #111827;
@@ -18,11 +22,17 @@
   --soft: #f9fafb;
 }
 
+/* =========================
+   RESET
+   Ensures cross-browser consistency
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
@@ -31,10 +41,10 @@ body {
   line-height: 1.6;
 }
 
-/* smooth scroll */
-html { scroll-behavior: smooth; }
-
-/* ================= HEADER ================= */
+/* =========================
+   HEADER (sticky navigation)
+   Keeps primary navigation accessible
+========================= */
 header {
   position: sticky;
   top: 0;
@@ -54,19 +64,7 @@ header {
   align-items:center;
 }
 
-.brand a {
-  display:flex;
-  align-items:center;
-  gap:14px;
-  text-decoration:none;
-}
-
-.logo svg {
-  height:40px;
-  width:auto;
-  display:block;
-}
-
+/* Navigation list layout */
 nav ul {
   display:flex;
   gap:22px;
@@ -78,13 +76,11 @@ nav a {
   text-decoration:none;
   color:var(--muted);
   font-weight:500;
-  transition:0.2s;
 }
 
-nav a:hover {
-  color:var(--text);
-}
+nav a:hover { color:var(--text); }
 
+/* Primary CTA emphasis */
 .cta {
   background:#111827;
   color:#fff !important;
@@ -92,7 +88,10 @@ nav a:hover {
   border-radius:10px;
 }
 
-/* ================= HERO ================= */
+/* =========================
+   HERO SECTION
+   Split layout: text + system diagram
+========================= */
 .hero {
   padding:140px 0 100px;
   background: linear-gradient(180deg, #ffffff 0%, var(--soft) 100%);
@@ -105,7 +104,7 @@ nav a:hover {
   padding:0 20px;
 }
 
-/* hero grid */
+/* Two-column hero layout */
 .hero .container {
   display:grid;
   grid-template-columns:1.2fr 0.8fr;
@@ -126,6 +125,9 @@ h1 {
   color:var(--primary);
 }
 
+/* =========================
+   REUSABLE UI ELEMENTS
+========================= */
 .hero p {
   margin-top:16px;
   color:var(--muted);
@@ -151,7 +153,9 @@ h1 {
   background:#111827;
 }
 
-/* ================= SECTIONS ================= */
+/* =========================
+   SECTION BASE STYLE
+========================= */
 section {
   padding:100px 0;
 }
@@ -160,6 +164,7 @@ section:nth-of-type(even) {
   background: var(--soft);
 }
 
+/* Section header block */
 .section-title {
   text-align:center;
   margin-bottom:50px;
@@ -175,12 +180,27 @@ section:nth-of-type(even) {
   margin-top:6px;
 }
 
+/* =========================
+   DEFAULT GRID SYSTEM
+   Used by Advisory + Delivery
+========================= */
 .grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:18px;
 }
 
+/* =========================
+   ARCHITECTURE SECTION (SPECIAL LAYOUT)
+   Enforced 2x2 grid on desktop for balance
+========================= */
+.grid-2x2 {
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:18px;
+}
+
+/* Card component (shared across site) */
 .card {
   padding:22px;
   border:1px solid var(--border);
@@ -189,11 +209,13 @@ section:nth-of-type(even) {
   transition:0.25s ease;
 }
 
+/* Hover micro-interaction for depth */
 .card:hover {
   transform:translateY(-6px);
   box-shadow:0 18px 38px rgba(0,0,0,0.08);
 }
 
+/* Small label inside cards */
 .capability {
   font-size:13px;
   color:var(--primary);
@@ -201,7 +223,9 @@ section:nth-of-type(even) {
   margin-bottom:8px;
 }
 
-/* ================= FOOTER ================= */
+/* =========================
+   FOOTER
+========================= */
 footer {
   background:#111827;
   color:#fff;
@@ -210,12 +234,22 @@ footer {
   font-size:13px;
 }
 
-/* ================= MOBILE ================= */
+/* =========================
+   RESPONSIVE BEHAVIOUR
+========================= */
 @media (max-width:768px) {
+
+  /* Typography scaling */
   h1 { font-size:40px; }
   .subhead { font-size:28px; }
 
+  /* Hero stacks vertically */
   .hero .container {
+    grid-template-columns:1fr;
+  }
+
+  /* Architecture grid collapses to 1 column */
+  .grid-2x2 {
     grid-template-columns:1fr;
   }
 
@@ -233,40 +267,41 @@ footer {
 <header>
   <div class="nav">
 
+    <!-- LOGO (SVG BRAND MARK) -->
     <div class="brand">
       <a href="#top">
-        <div class="logo">
-          <svg width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="venras" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#2563eb"/>
-                <stop offset="100%" stop-color="#60a5fa"/>
-              </linearGradient>
-            </defs>
+        <svg width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="venras" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#2563eb"/>
+              <stop offset="100%" stop-color="#60a5fa"/>
+            </linearGradient>
+          </defs>
 
-            <path d="M14 10 L22 32 L30 10"
-                  stroke="url(#venras)"
-                  stroke-width="3.2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  fill="none"/>
+          <!-- Abstract triangular mark -->
+          <path d="M14 10 L22 32 L30 10"
+                stroke="url(#venras)"
+                stroke-width="3.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"/>
 
-            <circle cx="14" cy="10" r="2.2" fill="#2563eb"/>
-            <circle cx="22" cy="32" r="2.2" fill="#2563eb"/>
-            <circle cx="30" cy="10" r="2.2" fill="#2563eb"/>
+          <circle cx="14" cy="10" r="2.2" fill="#2563eb"/>
+          <circle cx="22" cy="32" r="2.2" fill="#2563eb"/>
+          <circle cx="30" cy="10" r="2.2" fill="#2563eb"/>
 
-            <text x="48" y="26"
-                  font-family="Inter, system-ui, Segoe UI, Arial"
-                  font-size="18"
-                  font-weight="700"
-                  fill="#111827">
-              VENRAS
-            </text>
-          </svg>
-        </div>
+          <text x="48" y="26"
+                font-family="Inter, system-ui, Segoe UI, Arial"
+                font-size="18"
+                font-weight="700"
+                fill="#111827">
+            VENRAS
+          </text>
+        </svg>
       </a>
     </div>
 
+    <!-- NAVIGATION -->
     <nav>
       <ul>
         <li><a href="#advisory">Advisory</a></li>
@@ -285,6 +320,7 @@ footer {
 <section class="hero">
   <div class="container">
 
+    <!-- LEFT: VALUE PROPOSITION -->
     <div>
       <h1>
         Enterprise Consulting
@@ -292,8 +328,7 @@ footer {
       </h1>
 
       <p>
-        VENRAS delivers advisory, architecture, engineering, and cloud transformation services
-        for enterprise-scale systems.
+        VENRAS delivers advisory, architecture, engineering, and cloud transformation services for enterprise-scale systems.
       </p>
 
       <div class="actions">
@@ -302,31 +337,30 @@ footer {
       </div>
     </div>
 
-    <!-- RIGHT VISUAL (UNCHANGED) -->
-    <div style="position:relative;">
-      <svg viewBox="0 0 420 420" width="100%" style="max-width:420px;">
+    <!-- RIGHT: SYSTEM LIFECYCLE DIAGRAM -->
+    <div aria-hidden="true">
+      <svg viewBox="0 0 420 420" width="100%">
         <circle cx="210" cy="210" r="180" fill="rgba(37,99,235,0.08)" />
 
+        <!-- Nodes -->
         <circle cx="210" cy="80" r="6" fill="#2563eb"/>
         <circle cx="120" cy="200" r="6" fill="#2563eb"/>
         <circle cx="300" cy="200" r="6" fill="#2563eb"/>
         <circle cx="210" cy="320" r="6" fill="#2563eb"/>
         <circle cx="210" cy="200" r="10" fill="#111827"/>
 
+        <!-- Connections -->
         <line x1="210" y1="80" x2="210" y2="190" stroke="#2563eb" opacity="0.5"/>
         <line x1="120" y1="200" x2="200" y2="200" stroke="#2563eb" opacity="0.5"/>
         <line x1="220" y1="200" x2="300" y2="200" stroke="#2563eb" opacity="0.5"/>
         <line x1="210" y1="210" x2="210" y2="320" stroke="#2563eb" opacity="0.5"/>
 
+        <!-- Labels -->
         <text x="210" y="55" text-anchor="middle" font-size="12" fill="#6b7280">Advisory</text>
         <text x="85" y="205" text-anchor="middle" font-size="12" fill="#6b7280">Architecture</text>
         <text x="335" y="205" text-anchor="middle" font-size="12" fill="#6b7280">Engineering</text>
         <text x="210" y="350" text-anchor="middle" font-size="12" fill="#6b7280">Delivery</text>
       </svg>
-
-      <div style="text-align:center;margin-top:12px;color:#6b7280;font-size:13px;">
-        Enterprise system lifecycle model
-      </div>
     </div>
 
   </div>
@@ -362,7 +396,7 @@ footer {
   </div>
 </section>
 
-<!-- ARCHITECTURE & ENGINEERING -->
+<!-- ARCHITECTURE (FIXED 2x2 GRID) -->
 <section id="architecture">
   <div class="container">
     <div class="section-title">
@@ -370,7 +404,8 @@ footer {
       <p>Design, build, and operate modern cloud-native systems</p>
     </div>
 
-    <div class="grid">
+    <!-- 2x2 enforced grid -->
+    <div class="grid-2x2">
       <div class="card">
         <div class="capability">Architecture</div>
         <h3>System Design</h3>
@@ -425,15 +460,22 @@ footer {
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
-    <div class="card" style="max-width:540px;margin:auto;text-align:center;">
+    <div class="section-title">
       <h2>Contact</h2>
-      <p style="color:var(--muted);margin-top:6px;">
-        We respond within 24 hours
+      <p>We respond within 24 hours</p>
+    </div>
+
+    <div class="card" style="max-width:520px;margin:auto;text-align:center;">
+      <p style="color:var(--muted);">
+        Reach us directly via email.
       </p>
 
+      <!-- Mailto-only CTA (no backend dependency) -->
       <div style="margin-top:18px;display:flex;flex-direction:column;gap:12px;">
         <a class="btn" href="mailto:info@venras.com">Email Us</a>
-        <a class="btn btn-dark" href="mailto:info@venras.com">Request Consultation</a>
+        <a class="btn btn-dark" href="mailto:info@venras.com?subject=Consultation Request">
+          Request Consultation
+        </a>
       </div>
     </div>
   </div>
@@ -441,6 +483,7 @@ footer {
 
 </main>
 
+<!-- FOOTER -->
 <footer>
   © 2026 VENRAS. All rights reserved.
 </footer>
