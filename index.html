@@ -41,8 +41,6 @@ header {
   z-index: 100;
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(12px);
-
-  /* FIX: clear separation from hero */
   border-bottom: 1px solid var(--border);
   box-shadow: 0 1px 12px rgba(0,0,0,0.04);
 }
@@ -97,8 +95,6 @@ nav a:hover {
 /* ================= HERO ================= */
 .hero {
   padding:140px 0 100px;
-
-  /* FIX: visual separation from header */
   background: linear-gradient(180deg, #ffffff 0%, var(--soft) 100%);
   border-bottom: 1px solid var(--border);
 }
@@ -160,7 +156,6 @@ section {
   padding:100px 0;
 }
 
-/* alternating section tone improves separation */
 section:nth-of-type(even) {
   background: var(--soft);
 }
@@ -240,7 +235,6 @@ footer {
 
     <div class="brand">
       <a href="#top">
-
         <div class="logo">
           <svg width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -270,7 +264,6 @@ footer {
             </text>
           </svg>
         </div>
-
       </a>
     </div>
 
@@ -309,7 +302,7 @@ footer {
       </div>
     </div>
 
-    <!-- RIGHT VISUAL -->
+    <!-- RIGHT VISUAL (UNCHANGED) -->
     <div style="position:relative;">
       <svg viewBox="0 0 420 420" width="100%" style="max-width:420px;">
         <circle cx="210" cy="210" r="180" fill="rgba(37,99,235,0.08)" />
@@ -451,6 +444,13 @@ footer {
 <footer>
   © 2026 VENRAS. All rights reserved.
 </footer>
+
+<!-- ONLY SAFE FIX: preserve #top state without UI impact -->
+<script>
+  if (!location.hash) {
+    history.replaceState(null, "", "#top");
+  }
+</script>
 
 </body>
 </html>
