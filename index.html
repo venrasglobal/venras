@@ -338,55 +338,80 @@ footer {
     </div>
 
     <!-- RIGHT: SYSTEM LIFECYCLE DIAGRAM -->
-	<div aria-hidden="true">
+<div aria-hidden="true">
   <svg viewBox="0 0 420 420" width="100%">
 
-    <!-- background ring -->
-    <circle cx="210" cy="210" r="180" fill="rgba(37,99,235,0.08)" />
+    <!-- =========================
+         BACKGROUND SYSTEM FIELD
+    ========================== -->
+    <circle cx="210" cy="210" r="180" fill="rgba(37,99,235,0.06)" />
 
-    <!-- nodes -->
-    <circle cx="210" cy="80" r="6" fill="#2563eb"/>
-    <circle cx="120" cy="200" r="6" fill="#2563eb"/>
-    <circle cx="300" cy="200" r="6" fill="#2563eb"/>
-    <circle cx="210" cy="320" r="6" fill="#2563eb"/>
-    <circle cx="210" cy="200" r="10" fill="#111827"/>
+    <!-- =========================
+         CONNECTION LINES (RELATIONSHIP LAYER)
+    ========================== -->
+    <line x1="210" y1="80" x2="210" y2="200" stroke="#2563eb" opacity="0.30" stroke-width="2"/>
+    <line x1="120" y1="200" x2="210" y2="200" stroke="#2563eb" opacity="0.30" stroke-width="2"/>
+    <line x1="210" y1="200" x2="300" y2="200" stroke="#2563eb" opacity="0.30" stroke-width="2"/>
+    <line x1="210" y1="200" x2="210" y2="320" stroke="#2563eb" opacity="0.30" stroke-width="2"/>
 
-    <!-- connections -->
-    <line x1="210" y1="80" x2="210" y2="190" stroke="#2563eb" opacity="0.5"/>
-    <line x1="120" y1="200" x2="200" y2="200" stroke="#2563eb" opacity="0.5"/>
-    <line x1="220" y1="200" x2="300" y2="200" stroke="#2563eb" opacity="0.5"/>
-    <line x1="210" y1="210" x2="210" y2="320" stroke="#2563eb" opacity="0.5"/>
+    <!-- =========================
+         NODES (REDUCED SIZE FOR PRECISION)
+    ========================== -->
 
-    <!-- LABEL BACKGROUNDS (improves readability over overlaps) -->
-    <rect x="155" y="40" width="110" height="18" rx="6" fill="#ffffff" opacity="0.85"/>
-    <rect x="40" y="190" width="130" height="18" rx="6" fill="#ffffff" opacity="0.85"/>
-    <rect x="250" y="190" width="120" height="18" rx="6" fill="#ffffff" opacity="0.85"/>
-    <rect x="165" y="345" width="90" height="18" rx="6" fill="#ffffff" opacity="0.85"/>
+    <!-- Advisory -->
+    <circle cx="210" cy="80" r="7" fill="#2563eb"/>
 
-    <!-- LABELS (pushed away from nodes + improved contrast) -->
-    <text x="210" y="53"
+    <!-- Architecture -->
+    <circle cx="120" cy="200" r="8" fill="#2563eb"/>
+
+    <!-- Engineering -->
+    <circle cx="300" cy="200" r="8" fill="#2563eb"/>
+
+    <!-- Delivery -->
+    <circle cx="210" cy="320" r="7" fill="#2563eb"/>
+
+    <!-- Center integration node -->
+    <circle cx="210" cy="200" r="11" fill="#111827"/>
+
+    <!-- =========================
+         LABELS (HIERARCHICAL TYPOGRAPHY)
+    ========================== -->
+
+    <!-- TOP (DIRECTLY ABOVE NODE) -->
+    <text x="210" y="52"
           text-anchor="middle"
-          font-size="12"
-          font-weight="600"
-          fill="#374151">Advisory</text>
+          font-size="14"
+          font-weight="700"
+          fill="#111827">
+      Advisory
+    </text>
 
-    <text x="105" y="204"
-          text-anchor="middle"
-          font-size="12"
-          font-weight="600"
-          fill="#374151">Architecture</text>
+    <!-- LEFT (Architecture) - edge-anchored to avoid node overlap -->
+<text x="100" y="205"
+      text-anchor="end"
+      font-size="14"
+      font-weight="700"
+      fill="#111827">
+  Architecture
+</text>
 
-    <text x="315" y="204"
-          text-anchor="middle"
-          font-size="12"
-          font-weight="600"
-          fill="#374151">Engineering</text>
+    <!-- RIGHT (Engineering) - edge-anchored to avoid node overlap -->
+<text x="315" y="205"
+      text-anchor="start"
+      font-size="14"
+      font-weight="700"
+      fill="#111827">
+  Engineering
+</text>
 
-    <text x="210" y="360"
+    <!-- BOTTOM (DIRECTLY BELOW NODE) -->
+    <text x="210" y="352"
           text-anchor="middle"
-          font-size="12"
-          font-weight="600"
-          fill="#374151">Delivery</text>
+          font-size="14"
+          font-weight="700"
+          fill="#111827">
+      Delivery
+    </text>
 
   </svg>
 </div>
