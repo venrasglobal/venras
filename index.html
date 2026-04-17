@@ -6,7 +6,7 @@
 
 <title>VENRAS | Enterprise Consulting & Engineering</title>
 
-<meta name="description" content="VENRAS provides enterprise advisory, architecture, engineering, program management, and delivery services." />
+<meta name="description" content="VENRAS provides enterprise advisory, architecture, engineering, program management, and cloud transformation services." />
 
 <style>
 :root {
@@ -30,14 +30,9 @@ body {
   line-height: 1.6;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-/* =========================
-   HEADER (UPGRADED BRAND WEIGHT)
-========================= */
-
+/* HEADER */
 header {
   position: sticky;
   top: 0;
@@ -45,7 +40,6 @@ header {
   background: rgba(255,255,255,0.78);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
-  transition: all 0.3s ease;
 }
 
 header.scrolled {
@@ -57,238 +51,163 @@ header.scrolled {
   max-width: 1100px;
   margin: auto;
   padding: 18px 20px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* BRAND (BIGGER + STRONGER) */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .brand a {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  text-decoration: none;
-  color: var(--text);
-  font-size: 20px; /* 🔥 increased */
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
 }
 
-/* LOGO BIGGER */
-.logo {
-  width: 60px; /* 🔥 increased */
-  height: 60px;
-  display: grid;
-  place-items: center;
-  transition: transform 0.35s ease;
-}
-
-.brand a:hover .logo {
-  transform: rotate(-3deg) scale(1.05);
-}
-
+/* LOGO (SAFE + CLEAN) */
 .logo svg {
-  width: 60px;
-  height: 60px;
+  height:40px;
+  width:auto;
+  display:block;
 }
 
-.logo path {
-  stroke-width: 4;
-}
-
-/* NAV (BIGGER TEXT) */
-nav {
-  display: flex;
-  align-items: center;
-  gap: 26px;
+nav ul {
+  display:flex;
+  gap:22px;
+  list-style:none;
+  align-items:center;
 }
 
 nav a {
-  text-decoration: none;
-  color: var(--muted);
-  font-weight: 500;
-  font-size: 16px; /* 🔥 increased */
-  letter-spacing: 0.01em;
-  transition: color 0.2s ease;
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:500;
 }
 
 nav a:hover {
-  color: var(--text);
+  color:var(--text);
 }
 
 .cta {
-  background: #111827;
-  color: #fff !important;
-  padding: 12px 16px;
-  border-radius: 10px;
-  font-weight: 600;
+  background:#111827;
+  color:#fff !important;
+  padding:10px 14px;
+  border-radius:10px;
 }
 
-/* =========================
-   HERO
-========================= */
-
+/* HERO */
 .hero {
-  padding: 140px 0 90px;
-  background: linear-gradient(180deg, #f9fafb, #fff);
+  padding:140px 0 90px;
+  background:linear-gradient(180deg,#f9fafb,#fff);
 }
 
 .container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 20px;
-}
-
-.hero-grid {
-  display: grid;
-  margin-top: 10px;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 60px;
-  align-items: center;
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px;
 }
 
 h1 {
-  font-size: 54px;
-  line-height: 1.05;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-size:54px;
+  line-height:1.05;
+  font-weight:800;
 }
 
 .subhead {
-  display: block;
-  font-size: 36px;
-  margin-top: 6px;
-  color: var(--primary);
+  display:block;
+  font-size:36px;
+  margin-top:6px;
+  color:var(--primary);
 }
 
 .hero p {
-  margin-top: 16px;
-  color: var(--muted);
-  font-size: 17px;
-  max-width: 600px;
+  margin-top:16px;
+  color:var(--muted);
+  max-width:600px;
 }
 
 .actions {
-  margin-top: 26px;
-  display: flex;
-  gap: 12px;
+  margin-top:26px;
+  display:flex;
+  gap:12px;
 }
 
 .btn {
-  display: inline-block;
-  background: var(--primary);
-  color: #fff;
-  padding: 11px 15px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
+  background:var(--primary);
+  color:#fff;
+  padding:11px 15px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
 }
 
 .btn-dark {
-  background: #111827;
+  background:#111827;
 }
 
-/* =========================
-   SECTIONS (IMPROVED STRUCTURE)
-========================= */
-
+/* SECTIONS */
 section {
-  padding: 100px 0;
+  padding:100px 0;
 }
 
 .section-title {
-  text-align: center;
-  margin-bottom: 50px;
+  text-align:center;
+  margin-bottom:50px;
 }
 
 .section-title h2 {
-  font-size: 40px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-size:40px;
+  font-weight:800;
 }
 
 .section-title p {
-  color: var(--muted);
-  margin-top: 6px;
-  font-size: 16px;
+  color:var(--muted);
+  margin-top:6px;
 }
-
-/* =========================
-   CAPABILITY BLOCKS (MAJOR IMPROVEMENT)
-========================= */
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
 }
 
-/* CARD (NOW MORE CONSULTING-STYLE) */
 .card {
-  padding: 22px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: #fff;
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding:22px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#fff;
+  transition:0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 38px rgba(0,0,0,0.08);
+  transform:translateY(-6px);
+  box-shadow:0 18px 38px rgba(0,0,0,0.08);
 }
 
-.card h3 {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.card p {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-/* NEW: capability header block inside cards */
 .capability {
-  font-size: 13px;
-  color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 8px;
+  font-size:13px;
+  color:var(--primary);
+  font-weight:600;
+  margin-bottom:8px;
 }
 
 /* FOOTER */
 footer {
-  background: #111827;
-  color: #fff;
-  text-align: center;
-  padding: 28px;
-  font-size: 13px;
+  background:#111827;
+  color:#fff;
+  text-align:center;
+  padding:28px;
+  font-size:13px;
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width:768px) {
+  h1 { font-size:40px; }
+  .subhead { font-size:28px; }
 
-  h1 {
-    font-size: 40px;
-  }
-
-  .subhead {
-    font-size: 28px;
-  }
-
-  nav {
-    display: none;
+  nav ul {
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    gap:12px;
   }
 }
 </style>
@@ -296,65 +215,77 @@ footer {
 
 <body>
 
-<header id="header">
+<header>
   <div class="nav">
 
-    <!-- BRAND -->
     <div class="brand">
       <a href="#top">
 
         <div class="logo">
-          <svg viewBox="0 0 40 40">
+          <svg width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <linearGradient id="venras" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0%" stop-color="#2563eb"/>
                 <stop offset="100%" stop-color="#60a5fa"/>
               </linearGradient>
             </defs>
 
-            <path d="M10 10 L20 32 L30 10"
-                  stroke="url(#g)"
-                  fill="none"
-                  stroke-linecap="round"/>
+            <path d="M14 10 L22 32 L30 10"
+                  stroke="url(#venras)"
+                  stroke-width="3.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"/>
+
+            <circle cx="14" cy="10" r="2.2" fill="#2563eb"/>
+            <circle cx="22" cy="32" r="2.2" fill="#2563eb"/>
+            <circle cx="30" cy="10" r="2.2" fill="#2563eb"/>
+
+            <text x="48" y="26"
+                  font-family="Inter, system-ui, Segoe UI, Arial"
+                  font-size="18"
+                  font-weight="700"
+                  fill="#111827">
+              VENRAS
+            </text>
           </svg>
         </div>
 
-        VENRAS
       </a>
     </div>
 
     <nav>
-      <a href="#advisory">Advisory</a>
-      <a href="#architecture">Architecture</a>
-      <a href="#delivery">Delivery</a>
-      <a class="cta" href="#contact">Contact</a>
+      <ul>
+        <li><a href="#advisory">Advisory</a></li>
+        <li><a href="#architecture">Architecture & Engineering</a></li>
+        <li><a href="#delivery">Delivery</a></li>
+        <li><a class="cta" href="#contact">Contact</a></li>
+      </ul>
     </nav>
 
   </div>
 </header>
 
+<main id="top">
+
 <!-- HERO -->
-<section class="hero" id="top">
-  <div class="container hero-grid">
+<section class="hero">
+  <div class="container">
 
-    <div>
-      <h1>
-        Enterprise Consulting
-        <span class="subhead">Architecture & Engineering</span>
-      </h1>
+    <h1>
+      Enterprise Consulting
+      <span class="subhead">Architecture & Engineering</span>
+    </h1>
 
-      <p>
-        VENRAS delivers advisory, architecture, engineering, and strategic program execution
-        for enterprise-scale transformation initiatives.
-      </p>
+    <p>
+      VENRAS delivers advisory, architecture, engineering, and cloud transformation services
+      for enterprise-scale systems.
+    </p>
 
-      <div class="actions">
-        <a class="btn" href="#contact">Contact</a>
-        <a class="btn btn-dark" href="#advisory">Explore</a>
-      </div>
+    <div class="actions">
+      <a class="btn" href="#contact">Contact</a>
+      <a class="btn btn-dark" href="#architecture">Explore</a>
     </div>
-
-    <div></div>
 
   </div>
 </section>
@@ -365,11 +296,10 @@ footer {
 
     <div class="section-title">
       <h2>Advisory</h2>
-      <p>Strategic direction and enterprise capability design</p>
+      <p>Strategy, governance, and operating model design</p>
     </div>
 
     <div class="grid">
-
       <div class="card">
         <div class="capability">Strategy</div>
         <h3>Technology Advisory</h3>
@@ -387,39 +317,44 @@ footer {
         <h3>Enterprise Design</h3>
         <p>Align organisational structure with delivery outcomes.</p>
       </div>
-
     </div>
 
   </div>
 </section>
 
-<!-- ARCHITECTURE -->
+<!-- ARCHITECTURE & ENGINEERING -->
 <section id="architecture">
   <div class="container">
 
     <div class="section-title">
-      <h2>Architecture</h2>
-      <p>Designing scalable and resilient enterprise systems</p>
+      <h2>Architecture & Engineering</h2>
+      <p>Design, build, and evolve modern cloud-native systems</p>
     </div>
 
     <div class="grid">
 
       <div class="card">
-        <div class="capability">Enterprise</div>
-        <h3>Architecture Strategy</h3>
-        <p>Define system structure, standards, and integration principles.</p>
+        <div class="capability">Architecture</div>
+        <h3>System Design</h3>
+        <p>Define scalable architecture, integration patterns, and platform standards.</p>
       </div>
 
       <div class="card">
-        <div class="capability">Solution</div>
-        <h3>Application Design</h3>
-        <p>Build scalable and modular application architectures.</p>
+        <div class="capability">Cloud Native</div>
+        <h3>Cloud Architecture</h3>
+        <p>Design resilient, scalable cloud-native enterprise systems.</p>
       </div>
 
       <div class="card">
-        <div class="capability">Integration</div>
-        <h3>System Connectivity</h3>
-        <p>Design APIs, data flows, and system interoperability.</p>
+        <div class="capability">Engineering</div>
+        <h3>Platform Engineering</h3>
+        <p>Build developer platforms and enable engineering productivity.</p>
+      </div>
+
+      <div class="card">
+        <div class="capability">Reliability</div>
+        <h3>SRE & Observability</h3>
+        <p>Ensure system reliability, monitoring, and operational excellence.</p>
       </div>
 
     </div>
@@ -432,8 +367,8 @@ footer {
   <div class="container">
 
     <div class="section-title">
-      <h2>Engineering & Delivery</h2>
-      <p>Build, scale, and operate enterprise systems</p>
+      <h2>Delivery</h2>
+      <p>Execution, migration, and enterprise transformation</p>
     </div>
 
     <div class="grid">
@@ -441,25 +376,13 @@ footer {
       <div class="card">
         <div class="capability">Execution</div>
         <h3>Program Management</h3>
-        <p>Lead strategic initiatives and enterprise delivery execution.</p>
+        <p>Lead enterprise-scale delivery and transformation initiatives.</p>
       </div>
 
       <div class="card">
-        <div class="capability">Reliability</div>
-        <h3>SRE & Observability</h3>
-        <p>Ensure system reliability, monitoring, and operational excellence.</p>
-      </div>
-
-      <div class="card">
-        <div class="capability">Performance</div>
-        <h3>Engineering Optimization</h3>
-        <p>Improve scalability, latency, and system efficiency.</p>
-      </div>
-
-      <div class="card">
-        <div class="capability">Delivery</div>
-        <h3>Platform Engineering</h3>
-        <p>Enable developer productivity and platform standardisation.</p>
+        <div class="capability">Transformation</div>
+        <h3>Cloud Migration Programs</h3>
+        <p>Deliver legacy system modernization and cloud migration initiatives.</p>
       </div>
 
     </div>
@@ -486,17 +409,11 @@ footer {
   </div>
 </section>
 
+</main>
+
 <footer>
   © 2026 VENRAS. All rights reserved.
 </footer>
-
-<script>
-const header = document.getElementById("header");
-
-window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 20);
-});
-</script>
 
 </body>
 </html>
