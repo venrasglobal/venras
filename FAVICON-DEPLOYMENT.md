@@ -20,6 +20,9 @@ https://www.venras.com/icon-192.png
 https://www.venras.com/icon-512.png
 https://www.venras.com/icon-512-maskable.png
 https://www.venras.com/site.webmanifest
+https://www.venras.com/robots.txt
+https://www.venras.com/sitemap.xml
+https://www.venras.com/404.html
 ```
 
 `/favicon.ico` matters most. Browsers request it at the root by convention even
