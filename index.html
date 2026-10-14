@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VENRAS | Corporate Information</title>
+
+    <meta name="description"
+          content="VENRAS PTY LTD — Australian registered company. Corporate information.">
+
+    <meta name="robots" content="index, follow">
+
+    <style>
+        :root {
+            --text: #111111;
+            --muted: #6b7280;
+            --line: #e5e7eb;
+            --background: #ffffff;
+            --surface: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+            color: var(--text);
+            background: var(--background);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            width: 100%;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 28px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .logo-mark {
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #111111;
+            color: #ffffff;
+            font-size: 17px;
+            font-weight: 700;
+            border-radius: 8px;
+            letter-spacing: -0.04em;
+        }
+
+        .logo-name {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .nav-label {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 32px 90px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 26px;
+            padding: 7px 13px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: var(--surface);
+            color: #4b5563;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 86px);
+            line-height: 0.95;
+            letter-spacing: -0.065em;
+            font-weight: 750;
+            margin-bottom: 28px;
+        }
+
+        .tagline {
+            font-size: clamp(20px, 3vw, 28px);
+            color: #374151;
+            font-weight: 400;
+            margin-bottom: 28px;
+        }
+
+        .intro {
+            max-width: 650px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .divider {
+            width: 52px;
+            height: 1px;
+            background: #111111;
+            margin: 48px auto;
+        }
+
+        .information {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 32px 100px;
+        }
+
+        .card {
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 42px;
+            background: #ffffff;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 22px;
+            letter-spacing: -0.02em;
+        }
+
+        .company-details {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 14px 24px;
+            font-size: 15px;
+        }
+
+        .label {
+            color: var(--muted);
+        }
+
+        .value {
+            font-weight: 500;
+        }
+
+        .contact {
+            margin-top: 34px;
+            padding-top: 28px;
+            border-top: 1px solid var(--line);
+        }
+
+        .contact a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+        }
+
+        .footer-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 26px 32px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        @media (max-width: 640px) {
+
+            .nav {
+                padding: 22px 20px;
+            }
+
+            .nav-label {
+                display: none;
+            }
+
+            .hero {
+                padding: 90px 24px 70px;
+            }
+
+            .information {
+                padding: 0 20px 70px;
+            }
+
+            .card {
+                padding: 28px 24px;
+                border-radius: 14px;
+            }
+
+            .company-details {
+                grid-template-columns: 1fr;
+                gap: 4px;
+                margin-bottom: 18px;
+            }
+
+            .label {
+                margin-top: 8px;
+            }
+
+            .footer-inner {
+                padding: 22px 20px;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <header>
+        <nav class="nav">
+
+            <a href="/" class="logo" aria-label="VENRAS home">
+
+                <span class="logo-mark">V</span>
+
+                <span class="logo-name">VENRAS</span>
+
+            </a>
+
+            <span class="nav-label">
+                Corporate Information
+            </span>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="eyebrow">
+                Australian Registered Company
+            </div>
+
+            <h1>VENRAS</h1>
+
+            <p class="tagline">
+                Technology. Talent. Transformation.
+            </p>
+
+            <div class="divider"></div>
+
+            <p class="intro">
+                VENRAS PTY LTD is an Australian registered company.
+                This website provides corporate information about VENRAS.
+                The company is currently not actively promoting consulting,
+                services or staffing engagements through this website.
+            </p>
+
+        </section>
+
+
+        <section class="information">
+
+            <div class="card">
+
+                <h2>Corporate Information</h2>
+
+                <div class="company-details">
+
+                    <div class="label">
+                        Company
+                    </div>
+
+                    <div class="value">
+                        VENRAS PTY LTD
+                    </div>
+
+
+                    <div class="label">
+                        ABN
+                    </div>
+
+                    <div class="value">
+                        58 690 322 537
+                    </div>
+
+
+                    <div class="label">
+                        ACN
+                    </div>
+
+                    <div class="value">
+                        690 322 537
+                    </div>
+
+
+                    <div class="label">
+                        Country
+                    </div>
+
+                    <div class="value">
+                        Australia
+                    </div>
+
+                </div>
+
+
+                <div class="contact">
+
+                    <div class="label">
+                        Corporate enquiries
+                    </div>
+
+                    <p style="margin-top: 6px;">
+                        <a href="mailto:info@venras.com">
+                            info@venras.com
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <span>
+                © VENRAS PTY LTD
+            </span>
+
+            <span>
+                ABN 58 690 322 537 · ACN 690 322 537
+            </span>
+
+        </div>
+
+    </footer>
+
+</div>
+
+</body>
+</html>
